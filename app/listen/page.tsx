@@ -28,82 +28,49 @@ const socialIcons: Record<string, React.ReactNode> = {
 export default function ListenPage() {
   return (
     <main style={{
-      minHeight: "100vh",
-      width: "100%",
-      background: "#0f0d0b",
-      fontFamily: "var(--font-cormorant)",
+      minHeight: "100vh", width: "100%",
+      background: "#0f0d0b", fontFamily: "var(--font-cormorant)",
     }}>
-
-      <div style={{
-        position: "fixed",
-        inset: 0,
-        zIndex: 0,
-        opacity: 0.12,
-      }}>
-        <Image
-          src="/albumcover.jpg"
-          alt=""
-          fill
-          style={{ objectFit: "cover", objectPosition: "center 25%" }}
-        />
+      <div style={{ position: "fixed", inset: 0, zIndex: 0, opacity: 0.12 }}>
+        <Image src="/albumcover.jpg" alt="" fill style={{ objectFit: "cover", objectPosition: "center 25%" }} />
       </div>
 
       <Navbar />
 
       <div style={{
-        position: "relative",
-        zIndex: 5,
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
+        position: "relative", zIndex: 5, minHeight: "100vh",
+        display: "flex", flexDirection: "column",
+        alignItems: "center", justifyContent: "center",
         padding: "120px 40px 80px",
       }}>
 
         <p style={{
-          color: "#c45c2e",
-          fontSize: "0.75rem",
-          letterSpacing: "0.2em",
-          textTransform: "uppercase",
-          marginBottom: "16px",
+          color: "#c45c2e", fontSize: "0.75rem", letterSpacing: "0.2em",
+          textTransform: "uppercase", marginBottom: "16px",
           fontFamily: "var(--font-cormorant)",
         }}>
           Now Streaming
         </p>
 
         <h1 style={{
-          fontFamily: "var(--font-playfair)",
-          color: "#f0e6d3",
-          fontSize: "clamp(2.5rem, 6vw, 5rem)",
-          fontWeight: "900",
-          letterSpacing: "-0.02em",
-          textTransform: "uppercase",
-          marginBottom: "8px",
-          textAlign: "center",
+          fontFamily: "var(--font-playfair)", color: "#f0e6d3",
+          fontSize: "clamp(2.5rem, 6vw, 5rem)", fontWeight: "900",
+          letterSpacing: "-0.02em", textTransform: "uppercase",
+          marginBottom: "8px", textAlign: "center",
         }}>
           Severed
         </h1>
 
         <p style={{
-          color: "rgba(240,230,211,0.45)",
-          fontSize: "0.85rem",
-          letterSpacing: "0.12em",
-          textTransform: "uppercase",
-          marginBottom: "64px",
-          fontFamily: "var(--font-cormorant)",
+          color: "rgba(240,230,211,0.45)", fontSize: "0.85rem",
+          letterSpacing: "0.12em", textTransform: "uppercase",
+          marginBottom: "64px", fontFamily: "var(--font-cormorant)",
         }}>
           iothesinger — 2026
         </p>
 
         {/* Streaming platforms */}
-        <div style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "12px",
-          width: "100%",
-          maxWidth: "420px",
-        }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%", maxWidth: "420px" }}>
           {listenLinks.map((platform) => (
             
             <a  key={platform.name}
@@ -111,20 +78,12 @@ export default function ListenPage() {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                padding: "20px 28px",
-                border: "1px solid rgba(240,230,211,0.15)",
-                color: "#f0e6d3",
-                textDecoration: "none",
-                fontFamily: "var(--font-cormorant)",
-                fontSize: "1.1rem",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                fontWeight: "500",
-                transition: "all 0.2s",
-                background: "rgba(240,230,211,0.03)",
+                display: "flex", alignItems: "center", justifyContent: "space-between",
+                padding: "20px 28px", border: "1px solid rgba(240,230,211,0.15)",
+                color: "#f0e6d3", textDecoration: "none",
+                fontFamily: "var(--font-cormorant)", fontSize: "1.1rem",
+                letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: "500",
+                transition: "all 0.2s", background: "rgba(240,230,211,0.03)",
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.background = "#c45c2e";
@@ -147,48 +106,35 @@ export default function ListenPage() {
 
         {/* Divider */}
         <div style={{
-          width: "100%",
-          maxWidth: "420px",
+          width: "100%", maxWidth: "420px",
           borderTop: "1px solid rgba(240,230,211,0.1)",
           margin: "48px 0 32px",
         }} />
 
         {/* Socials label */}
         <p style={{
-          color: "rgba(240,230,211,0.4)",
-          fontSize: "0.7rem",
-          letterSpacing: "0.2em",
-          textTransform: "uppercase",
-          marginBottom: "20px",
-          fontFamily: "var(--font-cormorant)",
+          color: "rgba(240,230,211,0.4)", fontSize: "0.7rem",
+          letterSpacing: "0.2em", textTransform: "uppercase",
+          marginBottom: "20px", fontFamily: "var(--font-cormorant)",
         }}>
           Follow
         </p>
 
         {/* Social icon buttons */}
-        <div style={{
-          display: "flex",
-          gap: "16px",
-          justifyContent: "center",
-        }}>
+        <div style={{ display: "flex", gap: "16px", justifyContent: "center" }}>
           {socialLinks.map((social) => (
             
-            <a  key={social.name}
+             <a key={social.name}
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
               title={social.name}
               style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                width: "44px",
-                height: "44px",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                width: "44px", height: "44px",
                 border: "1px solid rgba(240,230,211,0.2)",
-                color: "rgba(240,230,211,0.6)",
-                textDecoration: "none",
-                transition: "all 0.2s",
-                background: "transparent",
+                color: "rgba(240,230,211,0.6)", textDecoration: "none",
+                transition: "all 0.2s", background: "transparent",
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.color = "#f0e6d3";

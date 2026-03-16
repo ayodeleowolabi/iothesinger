@@ -21,7 +21,6 @@ export const bio = [
   "Her debut album Severed arrives spring 2026. It is a record about grief, liberation, and the terrifying space in between — the place where you've let go of who you were but haven't yet become who you're meant to be.",
 ];
 
-// ADD THIS ↓
 export const pullQuote =
   "iothesinger is a rock and soul artist whose performances don't just move rooms, they change them.";
 
@@ -36,8 +35,9 @@ export const shows = [
   { date: "Jun 19, 2026", venue: "TBA", city: "Seville, Spain", url: null },
   { date: "Jul 3, 2026", venue: "Lady Drama Rock Bar", city: "Seville, Spain", url: null },
   { date: "Jul 15, 2026", venue: "Cafe La Palma", city: "Madrid, Spain", url: null },
-  { date: "Jul 24, 2026", venue: "TBA", city: "Spain", url: null },
-  { date: "Aug 22, 2026", venue: "Plaza De Espana", city: "Extremadura, Spain", url: null },
+  { date: "Jul 24, 2026", venue: "Tina Turner Tribute", city: "Spain", url: null },
+  { date: "Aug 22, 2026", venue: "IO Originals y Tina Turner", city: "Extremadura, Spain", url: null },
+  { date: "Nov 6, 2026", venue: "TBA", city: "TBA", url: null },
 ];
 
 export const videos = [
@@ -52,6 +52,13 @@ export const listenLinks = [
   { name: "Spotify", url: "https://open.spotify.com/artist/12jmhK2iFMAeOGYAo59v9C" },
   { name: "Apple Music", url: "https://music.apple.com/us/artist/iothesinger/1768147527" },
   { name: "Bandcamp", url: "https://iothesinger.bandcamp.com/" },
+  { name: "YouTube", url: "https://www.youtube.com/@iothesinger." },
+];
+
+export const socialLinks = [
+  { name: "Instagram", url: "https://www.instagram.com/iothesinger" },
+  { name: "TikTok", url: "https://www.tiktok.com/@iothesinger" },
+  { name: "Facebook", url: "https://www.facebook.com/iothesingerfacebookpage" },
   { name: "YouTube", url: "https://www.youtube.com/@iothesinger." },
 ];
 

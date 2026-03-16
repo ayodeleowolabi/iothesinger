@@ -15,7 +15,6 @@ function Navbar() {
 
   return (
     <>
-      {/* Top gradient */}
       <div style={{
         position: "fixed",
         top: 0, left: 0, right: 0,
@@ -25,7 +24,6 @@ function Navbar() {
         pointerEvents: "none",
       }} />
 
-      {/* Nav bar */}
       <div style={{
         position: "fixed",
         top: 0, left: 0, right: 0,
@@ -36,7 +34,6 @@ function Navbar() {
         zIndex: 20,
       }}>
 
-        {/* Logo */}
         <Link href="/" style={{
           fontFamily: "var(--font-playfair)",
           color: "#f0e6d3",
@@ -50,14 +47,7 @@ function Navbar() {
           iothesinger
         </Link>
 
-        {/* Desktop nav */}
-        <nav style={{
-          display: "flex",
-          gap: "28px",
-          alignItems: "center",
-        }}
-          className="desktop-nav"
-        >
+        <nav style={{ display: "flex", gap: "28px", alignItems: "center" }} className="desktop-nav">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -76,12 +66,12 @@ function Navbar() {
             </Link>
           ))}
 
-          {/* Listen Now — desktop */}
           <Link
             href="/listen"
             style={{
-              color: "#fff0e6d3",
+              color: "#f0e6d3",
               background: "#0f0d0b",
+              border: "1px solid rgba(240,230,211,0.3)",
               textDecoration: "none",
               fontSize: "0.75rem",
               letterSpacing: "0.12em",
@@ -95,7 +85,6 @@ function Navbar() {
           </Link>
         </nav>
 
-        {/* Hamburger — mobile only */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="hamburger"
@@ -111,33 +100,23 @@ function Navbar() {
           aria-label="Menu"
         >
           <span style={{
-            display: "block",
-            width: "24px",
-            height: "2px",
-            background: "#f0e6d3",
+            display: "block", width: "24px", height: "2px", background: "#f0e6d3",
             transition: "all 0.3s",
             transform: menuOpen ? "rotate(45deg) translate(5px, 5px)" : "none",
           }} />
           <span style={{
-            display: "block",
-            width: "24px",
-            height: "2px",
-            background: "#f0e6d3",
+            display: "block", width: "24px", height: "2px", background: "#f0e6d3",
             transition: "all 0.3s",
             opacity: menuOpen ? 0 : 1,
           }} />
           <span style={{
-            display: "block",
-            width: "24px",
-            height: "2px",
-            background: "#f0e6d3",
+            display: "block", width: "24px", height: "2px", background: "#f0e6d3",
             transition: "all 0.3s",
             transform: menuOpen ? "rotate(-45deg) translate(5px, -5px)" : "none",
           }} />
         </button>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <div style={{
           position: "fixed",
@@ -169,13 +148,13 @@ function Navbar() {
             </Link>
           ))}
 
-          {/* Listen Now — mobile */}
           <Link
             href="/listen"
             onClick={() => setMenuOpen(false)}
             style={{
-              color: "#0f0d0b",
-              background: "#c45c2e",
+              color: "#f0e6d3",
+              background: "#0f0d0b",
+              border: "1px solid rgba(240,230,211,0.3)",
               textDecoration: "none",
               fontSize: "2rem",
               fontFamily: "var(--font-playfair)",
@@ -191,15 +170,10 @@ function Navbar() {
         </div>
       )}
 
-      {/* Responsive styles */}
       <style>{`
         @media (max-width: 768px) {
-          .desktop-nav {
-            display: none !important;
-          }
-          .hamburger {
-            display: flex !important;
-          }
+          .desktop-nav { display: none !important; }
+          .hamburger { display: flex !important; }
         }
       `}</style>
     </>
