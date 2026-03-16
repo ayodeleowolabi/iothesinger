@@ -52,7 +52,7 @@ export const listenLinks = [
   { name: "Spotify", url: "https://open.spotify.com/artist/12jmhK2iFMAeOGYAo59v9C" },
   { name: "Apple Music", url: "https://music.apple.com/us/artist/iothesinger/1768147527" },
   { name: "Bandcamp", url: "https://iothesinger.bandcamp.com/" },
-  { name: "YouTube", url: "https://www.youtube.com/@iothesinger" },
+  { name: "YouTube", url: "https://www.youtube.com/@iothesinger." },
 ];
 
 export const socialLinks = [
@@ -63,5 +63,10 @@ export const socialLinks = [
 ];
 
 export const cities = ["DC", "NYC", "Atlanta", "Madrid", "London", "Paris", "Amsterdam"];
-
+export const socialLinks = [
+  { name: "Instagram", url: "https://www.instagram.com/iothesinger" },
+  { name: "TikTok", url: "https://www.tiktok.com/@iothesinger" },
+  { name: "Facebook", url: "https://www.facebook.com/iothesingerfacebookpage" },
+  { name: "YouTube", url: "https://www.youtube.com/@iothesinger." },
+];
 export const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScPhiJ_NWz5kgkowPUS8jIhtU8Akjeog0giH9BzUEAwbtBW5w/formResponse";
