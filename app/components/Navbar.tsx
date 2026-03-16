@@ -75,6 +75,24 @@ function Navbar() {
               {link.name}
             </Link>
           ))}
+
+          {/* Listen Now — desktop */}
+          <Link
+            href="/listen"
+            style={{
+              color: "#fff0e6d3",
+              background: "#0f0d0b",
+              textDecoration: "none",
+              fontSize: "0.75rem",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              fontWeight: "600",
+              fontFamily: "var(--font-cormorant)",
+              padding: "8px 18px",
+            }}
+          >
+            Listen Now
+          </Link>
         </nav>
 
         {/* Hamburger — mobile only */}
@@ -150,6 +168,26 @@ function Navbar() {
               {link.name}
             </Link>
           ))}
+
+          {/* Listen Now — mobile */}
+          <Link
+            href="/listen"
+            onClick={() => setMenuOpen(false)}
+            style={{
+              color: "#0f0d0b",
+              background: "#c45c2e",
+              textDecoration: "none",
+              fontSize: "2rem",
+              fontFamily: "var(--font-playfair)",
+              fontWeight: "900",
+              letterSpacing: "-0.02em",
+              textTransform: "uppercase",
+              padding: "16px 40px",
+              marginTop: "8px",
+            }}
+          >
+            Listen Now
+          </Link>
         </div>
       )}
 
