@@ -12,8 +12,6 @@ const listenLinks = [
 
 const navLinks = [
   { name: "Tour", href: "/tour" },
-  { name: "Press", href: "/press" },
-  { name: "Store", href: "/store" },
   { name: "Info", href: "/info" },
   { name: "Video", href: "/video" },
   { name: "Sign Up", href: "/signup" },
