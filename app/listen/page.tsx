@@ -58,7 +58,7 @@ export default function ListenPage() {
           letterSpacing: "-0.02em", textTransform: "uppercase",
           marginBottom: "8px", textAlign: "center",
         }}>
-          Severed
+          Music
         </h1>
 
         <p style={{
