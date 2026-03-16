@@ -1,20 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-
-const navLinks = [
-  { name: "Tour", href: "/tour" },
-  { name: "Store", href: "/store" },
-  { name: "Info", href: "/info" },
-  { name: "Video", href: "/video" },
-  { name: "Sign Up", href: "/signup" },
-];
-
-const cities = ["DC", "NYC", "Atlanta", "Madrid", "London", "Paris", "Amsterdam"];
-
-const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScPhiJ_NWz5kgkowPUS8jIhtU8Akjeog0giH9BzUEAwbtBW5w/formResponse";
+import Navbar from "../components/Navbar";
+import { cities, FORM_URL } from "../data/siteData";
 
 export default function SignUpPage() {
   const [email, setEmail] = useState("");
@@ -40,7 +29,7 @@ export default function SignUpPage() {
         body,
       });
     } catch (_) {
-      // no-cors will always throw — that's expected
+      // no-cors will always throw — expected
     }
 
     setSubmitted(true);
@@ -88,57 +77,7 @@ export default function SignUpPage() {
         />
       </div>
 
-      {/* Top gradient */}
-      <div style={{
-        position: "fixed",
-        top: 0, left: 0, right: 0,
-        height: "120px",
-        background: "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)",
-        zIndex: 9,
-      }} />
-
-      {/* Nav */}
-      <div style={{
-        position: "fixed",
-        top: 0, left: 0, right: 0,
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "28px 40px",
-        zIndex: 10,
-      }}>
-        <Link href="/" style={{
-          fontFamily: "var(--font-playfair)",
-          color: "#f0e6d3",
-          fontSize: "2.4rem",
-          fontWeight: "900",
-          letterSpacing: "-0.04em",
-          textTransform: "uppercase",
-          textDecoration: "none",
-          lineHeight: 1,
-        }}>
-          iothesinger
-        </Link>
-        <nav style={{ display: "flex", gap: "28px", alignItems: "center" }}>
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              style={{
-                color: "#f0e6d3",
-                textDecoration: "none",
-                fontSize: "0.75rem",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                fontWeight: "500",
-                fontFamily: "var(--font-cormorant)",
-              }}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
-      </div>
+      <Navbar />
 
       {/* Content */}
       <div style={{
@@ -185,10 +124,7 @@ export default function SignUpPage() {
           </p>
 
           {submitted ? (
-            <div style={{
-              textAlign: "center",
-              padding: "48px 0",
-            }}>
+            <div style={{ textAlign: "center", padding: "48px 0" }}>
               <p style={{
                 fontFamily: "var(--font-playfair)",
                 color: "#f0e6d3",
@@ -198,17 +134,13 @@ export default function SignUpPage() {
               }}>
                 You're in.
               </p>
-              <p style={{
-                color: "rgba(240,230,211,0.6)",
-                fontSize: "1.1rem",
-              }}>
+              <p style={{ color: "rgba(240,230,211,0.6)", fontSize: "1.1rem" }}>
                 Welcome to the inner circle. See you at the show.
               </p>
             </div>
           ) : (
             <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
 
-              {/* Email */}
               <div>
                 <label style={labelStyle}>Email Address *</label>
                 <input
@@ -220,7 +152,6 @@ export default function SignUpPage() {
                 />
               </div>
 
-              {/* First Name */}
               <div>
                 <label style={labelStyle}>First Name</label>
                 <input
@@ -232,65 +163,63 @@ export default function SignUpPage() {
                 />
               </div>
 
-              {/* City */}
-            {/* City */}
-<div style={{ position: "relative" }}>
-  <label style={labelStyle}>Nearest Major City</label>
-  <button
-    onClick={() => setCityOpen(!cityOpen)}
-    style={{
-      ...inputStyle,
-      width: "100%",
-      textAlign: "left",
-      cursor: "pointer",
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      color: city ? "#f0e6d3" : "rgba(240,230,211,0.35)",
-    }}
-  >
-    <span>{city || "— select your city —"}</span>
-    <span style={{ fontSize: "0.7rem", opacity: 0.6 }}>{cityOpen ? "▲" : "▼"}</span>
-  </button>
+              {/* Custom city dropdown */}
+              <div style={{ position: "relative" }}>
+                <label style={labelStyle}>Nearest Major City</label>
+                <button
+                  onClick={() => setCityOpen(!cityOpen)}
+                  style={{
+                    ...inputStyle,
+                    width: "100%",
+                    textAlign: "left",
+                    cursor: "pointer",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    color: city ? "#f0e6d3" : "rgba(240,230,211,0.35)",
+                  }}
+                >
+                  <span>{city || "— select your city —"}</span>
+                  <span style={{ fontSize: "0.7rem", opacity: 0.6 }}>{cityOpen ? "▲" : "▼"}</span>
+                </button>
 
-  {cityOpen && (
-    <div style={{
-      position: "absolute",
-      top: "100%",
-      left: 0,
-      right: 0,
-      background: "#1a1209",
-      border: "1px solid rgba(240,230,211,0.2)",
-      borderTop: "none",
-      zIndex: 20,
-    }}>
-      {cities.map((c) => (
-        <button
-          key={c}
-          onClick={() => { setCity(c); setCityOpen(false); }}
-          style={{
-            display: "block",
-            width: "100%",
-            textAlign: "left",
-            padding: "14px 20px",
-            background: city === c ? "rgba(196,92,46,0.2)" : "transparent",
-            color: city === c ? "#c45c2e" : "rgba(240,230,211,0.8)",
-            border: "none",
-            borderBottom: "1px solid rgba(240,230,211,0.08)",
-            fontSize: "1.1rem",
-            fontFamily: "var(--font-cormorant)",
-            cursor: "pointer",
-            letterSpacing: "0.05em",
-          }}
-        >
-          {c}
-        </button>
-      ))}
-    </div>
-  )}
-</div>
+                {cityOpen && (
+                  <div style={{
+                    position: "absolute",
+                    top: "100%",
+                    left: 0,
+                    right: 0,
+                    background: "#1a1209",
+                    border: "1px solid rgba(240,230,211,0.2)",
+                    borderTop: "none",
+                    zIndex: 20,
+                  }}>
+                    {cities.map((c) => (
+                      <button
+                        key={c}
+                        onClick={() => { setCity(c); setCityOpen(false); }}
+                        style={{
+                          display: "block",
+                          width: "100%",
+                          textAlign: "left",
+                          padding: "14px 20px",
+                          background: city === c ? "rgba(196,92,46,0.2)" : "transparent",
+                          color: city === c ? "#c45c2e" : "rgba(240,230,211,0.8)",
+                          border: "none",
+                          borderBottom: "1px solid rgba(240,230,211,0.08)",
+                          fontSize: "1.1rem",
+                          fontFamily: "var(--font-cormorant)",
+                          cursor: "pointer",
+                          letterSpacing: "0.05em",
+                        }}
+                      >
+                        {c}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
 
-              {/* Submit */}
               <button
                 onClick={handleSubmit}
                 disabled={loading || !email}

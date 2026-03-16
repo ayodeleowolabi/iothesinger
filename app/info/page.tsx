@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Navbar from "../components/Navbar";
 
 const navLinks = [
   { name: "Tour", href: "/tour" },
@@ -42,59 +43,7 @@ export default function InfoPage() {
         />
       </div>
 
-      {/* Top gradient */}
-      <div style={{
-        position: "fixed",
-        top: 0, left: 0, right: 0,
-        height: "120px",
-        background: "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)",
-        zIndex: 9,
-      }} />
-
-      {/* Nav */}
-      <div style={{
-        position: "fixed",
-        top: 0, left: 0, right: 0,
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "28px 40px",
-        zIndex: 10,
-      }}>
-        <Link href="/" style={{
-          fontFamily: "var(--font-playfair)",
-          color: "#f0e6d3",
-          fontSize: "2.4rem",
-          fontWeight: "900",
-          letterSpacing: "-0.04em",
-          textTransform: "uppercase",
-          textDecoration: "none",
-          lineHeight: 1,
-        }}>
-          iothesinger
-        </Link>
-
-        <nav style={{ display: "flex", gap: "28px", alignItems: "center" }}>
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              style={{
-                color: "#f0e6d3",
-                textDecoration: "none",
-                fontSize: "0.75rem",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                fontWeight: "500",
-                fontFamily: "var(--font-cormorant)",
-              }}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
-      </div>
-
+<Navbar />
       {/* Content */}
       <div style={{
         position: "relative",

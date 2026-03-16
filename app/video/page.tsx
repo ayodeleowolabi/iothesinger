@@ -1,35 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
-
-const videos = [
-  {
-    id: "KEOMLJTqgtg",
-    title: "Music Video",
-  },
-  {
-    id: "3op04o7ofm0",
-    title: "Searching — Acoustic",
-  },
-  {
-    id: "Y69wyJ209DE",
-    title: "Live on WUSA",
-  },
-  {
-    id: "8CgiPg0uqL4",
-    title: "Live Performance",
-  },
-  {
-    id: "2N-6a1A2Nvg",
-    title: "Invaded",
-  },
-];
-
-const navLinks = [
-  { name: "Tour", href: "/tour" },
-  { name: "Info", href: "/info" },
-  { name: "Video", href: "/video" },
-  { name: "Sign Up", href: "/signup" },
-];
+import Navbar from "../components/Navbar";
+import { videos } from "../data/siteData";
 
 export default function VideoPage() {
   return (
@@ -40,7 +11,7 @@ export default function VideoPage() {
       overflowY: "auto",
     }}>
 
-      {/* Background image — subtle */}
+      {/* Background */}
       <div style={{
         position: "fixed",
         inset: 0,
@@ -55,57 +26,7 @@ export default function VideoPage() {
         />
       </div>
 
-      {/* Top gradient */}
-      <div style={{
-        position: "fixed",
-        top: 0, left: 0, right: 0,
-        height: "120px",
-        background: "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)",
-        zIndex: 9,
-      }} />
-
-      {/* Nav */}
-      <div style={{
-        position: "fixed",
-        top: 0, left: 0, right: 0,
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "28px 40px",
-        zIndex: 10,
-      }}>
-        <Link href="/" style={{
-          fontFamily: "var(--font-playfair)",
-          color: "#f0e6d3",
-          fontSize: "2.4rem",
-          fontWeight: "900",
-          letterSpacing: "-0.04em",
-          textTransform: "uppercase",
-          textDecoration: "none",
-          lineHeight: 1,
-        }}>
-          iothesinger
-        </Link>
-
-        <nav style={{ display: "flex", gap: "28px", alignItems: "center" }}>
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              style={{
-                color: "#f0e6d3",
-                textDecoration: "none",
-                fontSize: "0.75rem",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                fontWeight: "500",
-              }}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
-      </div>
+      <Navbar />
 
       {/* Content */}
       <div style={{
@@ -116,20 +37,19 @@ export default function VideoPage() {
         margin: "0 auto",
       }}>
 
-      <h1 style={{
-  fontFamily: "var(--font-playfair)",
-  color: "#f0e6d3",
-  fontSize: "3rem",
-  fontWeight: "900",
-  letterSpacing: "-0.02em",
-  marginBottom: "48px",
-  textTransform: "uppercase",
-  textAlign: "center",
-}}>
-  Video
-</h1>
+        <h1 style={{
+          fontFamily: "var(--font-playfair)",
+          color: "#f0e6d3",
+          fontSize: "3rem",
+          fontWeight: "900",
+          letterSpacing: "-0.02em",
+          marginBottom: "48px",
+          textTransform: "uppercase",
+          textAlign: "center",
+        }}>
+          Video
+        </h1>
 
-        {/* Grid */}
         <div style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))",
@@ -165,6 +85,7 @@ export default function VideoPage() {
                 textTransform: "uppercase",
                 marginTop: "12px",
                 opacity: 0.7,
+                fontFamily: "var(--font-cormorant)",
               }}>
                 {video.title}
               </p>
