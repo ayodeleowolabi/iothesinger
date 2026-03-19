@@ -85,22 +85,13 @@ export default function TourPage() {
                 {show.city}
               </div>
 
-              <div style={{ minWidth: "120px", textAlign: "right" }}>
+              <div className="ticketCell">
                 {show.url ? (
                   
                    <a href={show.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{
-                      display: "inline-block",
-                      border: "1px solid #f0e6d3",
-                      color: "#f0e6d3",
-                      padding: "8px 20px",
-                      fontSize: "0.7rem",
-                      letterSpacing: "0.12em",
-                      textTransform: "uppercase",
-                      textDecoration: "none",
-                    }}
+                    className="ticketLink"
                   >
                     Tickets
                   </a>

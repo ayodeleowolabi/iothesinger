@@ -12,3 +12,32 @@ html, body {
   height: 100%;
   width: 100%;
 }
+
+.ticketLink {
+  border: 1px solid #f0e6d3;
+  color: #f0e6d3;
+  padding: 8px 20px;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.ticketCell {
+  min-width: 120px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .ticketLink {
+    display: block;
+    text-align: left;
+    width: fit-content;
+    margin: 0.75rem auto 0;
+  }
+
+  .ticketCell {
+    width: 100%;
+    text-align: center;
+  }
+}
