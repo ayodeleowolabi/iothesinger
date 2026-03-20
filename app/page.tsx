@@ -12,7 +12,7 @@ export default function Home() {
     }}>
       <Image
         src="/albumcover.jpg"
-        alt="Io The Singer"
+        alt="iothesinger"
         fill
         priority
         style={{ objectFit: "cover", objectPosition: "center 25%" }}

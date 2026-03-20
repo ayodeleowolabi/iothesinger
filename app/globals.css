@@ -13,31 +13,59 @@ html, body {
   width: 100%;
 }
 
+/* ── Tour rows — desktop grid ── */
+.showRow {
+  display: grid;
+  grid-template-columns: 130px 220px 160px 1fr;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(240, 230, 211, 0.15);
+  gap: 16px;
+}
+
+.ticketCell {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .ticketLink {
-  border: 1px solid #f0e6d3;
+  border: 1px solid rgba(240, 230, 211, 0.5);
   color: #f0e6d3;
   padding: 8px 20px;
   font-size: 0.7rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
 }
 
-.ticketCell {
-  min-width: 120px;
-  text-align: right;
+.ticketLink:hover {
+  background: rgba(240, 230, 211, 0.08);
+  border-color: #f0e6d3;
 }
 
-@media (max-width: 768px) {
-  .ticketLink {
-    display: block;
-    text-align: left;
-    width: fit-content;
-    margin: 0.75rem auto 0;
+/* ── Mobile — single column stack ── */
+@media (max-width: 640px) {
+  .showRow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 20px 0;
   }
 
   .ticketCell {
+    width: 50%;
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .ticketLink {
+    display: block;
     width: 100%;
     text-align: center;
+    padding: 12px 20px;
   }
 }

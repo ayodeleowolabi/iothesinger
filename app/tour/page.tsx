@@ -19,7 +19,6 @@ export default function TourPage() {
         style={{ objectFit: "cover", objectPosition: "center 25%" }}
       />
 
-      {/* Dark overlay */}
       <div style={{
         position: "absolute",
         inset: 0,
@@ -28,7 +27,6 @@ export default function TourPage() {
 
       <Navbar />
 
-      {/* Scrollable content */}
       <div style={{
         position: "absolute",
         top: "100px",
@@ -37,54 +35,46 @@ export default function TourPage() {
         right: 0,
         overflowY: "auto",
         zIndex: 10,
-        padding: "40px 40px 60px",
+        padding: "40px 20px 60px",
       }}>
-        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+        <div style={{ maxWidth: "900px", margin: "0 auto", paddingRight: "16px" }}>
+
           {shows.map((show, i) => (
-            <div
-              key={i}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                padding: "20px 0",
-                borderBottom: "1px solid rgba(240,230,211,0.15)",
-                gap: "16px",
-                flexWrap: "wrap",
-              }}
-            >
+            <div key={i} className="showRow">
+
+              {/* Date */}
               <div style={{
                 color: "#c45c2e",
                 fontSize: "0.85rem",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
                 fontWeight: "600",
-                minWidth: "140px",
                 fontFamily: "var(--font-cormorant)",
               }}>
                 {show.date}
               </div>
 
+              {/* Venue */}
               <div style={{
                 color: "#f0e6d3",
                 fontSize: "1rem",
                 fontWeight: "500",
-                flex: 1,
                 fontFamily: "var(--font-cormorant)",
               }}>
                 {show.venue}
               </div>
 
+              {/* City */}
               <div style={{
                 color: "rgba(240,230,211,0.6)",
                 fontSize: "0.85rem",
                 letterSpacing: "0.05em",
-                minWidth: "160px",
                 fontFamily: "var(--font-cormorant)",
               }}>
                 {show.city}
               </div>
 
+              {/* Ticket button */}
               <div className="ticketCell">
                 {show.url ? (
                   
@@ -106,6 +96,7 @@ export default function TourPage() {
                   </span>
                 )}
               </div>
+
             </div>
           ))}
         </div>
