@@ -241,12 +241,12 @@ export default function SignUpPage() {
               </button>
 
               <p style={{
-                color: "rgba(240,230,211,0.3)",
+                color: "rgba(240,230,211,0.8)",
                 fontSize: "0.85rem",
                 letterSpacing: "0.05em",
                 textAlign: "center",
               }}>
-                No spam. No selling your info. Just IO.
+                contact@iothesinger.com
               </p>
             </div>
           )}
