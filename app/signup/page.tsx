@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import { cities, FORM_URL } from "../data/siteData";
 
 export default function SignUpPage() {
+  const [phone, setPhone] = useState('')
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [city, setCity] = useState("");
@@ -36,6 +37,13 @@ export default function SignUpPage() {
     setLoading(false);
   };
 
+  const formatPhone = (value: string) => {
+  const digits = value.replace(/\D/g, '').slice(0, 10)
+  if (digits.length >= 7) return `(${digits.slice(0,3)}) ${digits.slice(3,6)}-${digits.slice(6)}`
+  if (digits.length >= 4) return `(${digits.slice(0,3)}) ${digits.slice(3)}`
+  if (digits.length >= 1) return `(${digits}`
+  return ''
+}
   const inputStyle = {
     width: "100%",
     background: "rgba(240,230,211,0.06)",
@@ -162,7 +170,16 @@ export default function SignUpPage() {
                   style={inputStyle}
                 />
               </div>
-
+<div>
+  <label style={labelStyle}>Phone Number</label>
+  <input
+    type="tel"
+    value={phone}
+    onChange={(e) => setPhone(formatPhone(e.target.value))}
+    placeholder="(555) 000-0000"
+    style={inputStyle}
+  />
+</div>
               {/* Custom city dropdown */}
               <div style={{ position: "relative" }}>
                 <label style={labelStyle}>Nearest Major City</label>
