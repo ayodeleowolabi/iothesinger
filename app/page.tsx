@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Navbar from "./components/Navbar";
 
 export default function Home() {
@@ -10,13 +9,23 @@ export default function Home() {
       height: "100vh",
       overflow: "hidden",
     }}>
-      <Image
-        src="/albumcover.jpg"
-        alt="iothesinger"
-        fill
-        priority
-        style={{ objectFit: "cover", objectPosition: "center 25%" }}
-      />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center",
+        }}
+      >
+        <source src="/Severed_animation.mp4" type="video/mp4" />
+      </video>
 
       <div style={{
         position: "absolute",
