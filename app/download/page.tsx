@@ -164,7 +164,7 @@ export default function DownloadPage() {
           <hr style={{ border: "none", borderTop: "0.5px solid rgba(255,255,255,0.12)", margin: "1.5rem 0" }} />
 
          <a 
-  href="https://pub-958e3a333ce34130ac2d28678cff1d91.r2.dev/severed%20the%20album.zip" 
+  href="https://pub-958e3a333ce34130ac2d28678cff1d91.r2.dev/severed-the-album.zip" 
   download="Severed-The-Album.zip"
   style={{ 
     display: "block", 
