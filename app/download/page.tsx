@@ -1,6 +1,5 @@
 "use client";
 
-import { RollerCoaster } from "lucide-react";
 import { useState } from "react";
 
 const ACCESS_CODE = "SEVERED2026";
@@ -164,7 +163,8 @@ export default function DownloadPage() {
 
           <hr style={{ border: "none", borderTop: "0.5px solid rgba(255,255,255,0.12)", margin: "1.5rem 0" }} />
 
-          <a href="/severed the album.zip" download style={{ display: "block", width: "100%", padding: "1rem", background: "#fff", color: "#000", textAlign: "center", textDecoration: "none", fontSize: "0.75rem", letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: "bold", boxSizing: "border-box" }}>
+         <a href="https://pub-958e3a333ce34130ac2d28678cff1d91.r2.dev/severed-the-album.zip" download="Severed-The-Album.zip"
+          >
             Download album
           </a>
 
