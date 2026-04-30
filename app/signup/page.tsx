@@ -118,8 +118,8 @@ export default function SignUpPage() {
             marginBottom: "20px",
             letterSpacing: "-0.02em",
           }}>
-            Stay close.<br />
-            Severed is coming.
+           <br />
+            Be the first to know.
           </h1>
 
           <p style={{
@@ -128,7 +128,7 @@ export default function SignUpPage() {
             lineHeight: 1.7,
             marginBottom: "48px",
           }}>
-            Be the first to hear about the album drop, shows near you, and moments you won't want to miss.
+            Be the first to hear about shows near you, and moments you won't want to miss.
           </p>
 
           {submitted ? (

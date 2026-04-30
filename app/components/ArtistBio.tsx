@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import { bio, facts, pullQuote, pressPhotos } from "../data/siteData";
+import { bio, facts, pullQuote, pressPhotos, pressFeatures } from "../data/siteData";
 
 export default function ArtistBio() {
   return (
@@ -18,11 +20,22 @@ export default function ArtistBio() {
           grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
           gap: 16px;
         }
+        .press-feature-card {
+          display: grid;
+          grid-template-columns: 280px 1fr;
+          gap: 32px;
+          align-items: center;
+          border: 1px solid rgba(240,230,211,0.12);
+          background: rgba(240,230,211,0.02);
+          transition: border-color 0.2s, background 0.2s;
+        }
         @media (max-width: 768px) {
           .info-grid { grid-template-columns: 1fr; gap: 40px; margin-bottom: 48px; }
           .info-pull-quote { font-size: 1.25rem; margin-bottom: 32px; }
           .info-bio-para { font-size: 1rem; line-height: 1.8; }
           .press-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+          .press-feature-card { grid-template-columns: 1fr; }
+          .press-feature-image { height: 220px !important; }
         }
         @media (max-width: 480px) {
           .info-pull-quote { font-size: 1.1rem; }
@@ -30,6 +43,7 @@ export default function ArtistBio() {
         }
       `}</style>
 
+      {/* ── Bio + Facts grid ── */}
       <div className="info-grid">
         <div>
           <p className="info-pull-quote" style={{
@@ -100,6 +114,78 @@ export default function ArtistBio() {
         </div>
       </div>
 
+      {/* ── Press Features ── */}
+      {pressFeatures.length > 0 && (
+        <div style={{ borderTop: "1px solid rgba(240,230,211,0.15)", paddingTop: "48px", marginBottom: "80px" }}>
+          <h2 style={{
+            fontFamily: "var(--font-playfair)", color: "#f0e6d3", fontSize: "1.5rem",
+            fontWeight: "900", letterSpacing: "-0.01em", textTransform: "uppercase", marginBottom: "32px",
+          }}>
+            Press
+          </h2>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+            {pressFeatures.map((feature) => (
+              <a
+                key={feature.url}
+                href={feature.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none", display: "block" }}
+              >
+                <div
+                  className="press-feature-card"
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLDivElement).style.borderColor = "#c45c2e";
+                    (e.currentTarget as HTMLDivElement).style.background = "rgba(196,92,46,0.05)";
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(240,230,211,0.12)";
+                    (e.currentTarget as HTMLDivElement).style.background = "rgba(240,230,211,0.02)";
+                  }}
+                >
+                  {/* Photo */}
+                  <div className="press-feature-image" style={{ position: "relative", height: "180px", overflow: "hidden" }}>
+                    <Image
+                      src="https://i0.wp.com/newspack-washingtoncitypaper.s3.amazonaws.com/uploads/2026/04/ayo-2_Josh-Jones-scaled-e1777473247686.jpg?w=1822&ssl=1"
+                      alt={feature.headline}
+                      fill
+                      style={{ objectFit: "cover", objectPosition: "center top" }}
+                      unoptimized
+                    />
+                  </div>
+
+                  {/* Text */}
+                  <div style={{ padding: "24px 24px 24px 0" }}>
+                    <div style={{
+                      color: "#c45c2e", fontSize: "0.7rem", letterSpacing: "0.15em",
+                      textTransform: "uppercase", marginBottom: "10px",
+                      fontFamily: "var(--font-cormorant)", fontWeight: "600",
+                    }}>
+                      {feature.outlet} · {feature.date}
+                    </div>
+                    <div style={{
+                      color: "#f0e6d3", fontSize: "1.3rem", lineHeight: 1.4,
+                      fontFamily: "var(--font-playfair)", fontWeight: "700",
+                    }}>
+                      {feature.headline}
+                    </div>
+                    <div style={{
+                      marginTop: "16px", color: "#c45c2e", fontSize: "0.75rem",
+                      letterSpacing: "0.12em", textTransform: "uppercase",
+                      fontFamily: "var(--font-cormorant)", fontWeight: "600",
+                    }}>
+                      Read Article →
+                    </div>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* ── Press Photos ── */}
       <div style={{ borderTop: "1px solid rgba(240,230,211,0.15)", paddingTop: "48px" }}>
         <h2 style={{
           fontFamily: "var(--font-playfair)", color: "#f0e6d3", fontSize: "1.5rem",

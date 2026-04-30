@@ -131,7 +131,7 @@ export default function DownloadPage() {
               ENTER ACCESS CODE
             </h1>
             <p style={{ color: "#888", fontSize: "0.85rem" }}>
-              This album is not on streaming. You have something rare.
+              This album is not currently streaming. You have something rare.
             </p>
             <input
               type="text"
@@ -185,6 +185,7 @@ export default function DownloadPage() {
               <p style={{ fontSize: "0.75rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#888", margin: "0 0 4px" }}>Io</p>
               <h1 style={{ fontSize: "1.75rem", fontWeight: "500", letterSpacing: "0.18em", textTransform: "uppercase", margin: "0 0 6px" }}>Severed</h1>
               <p style={{ fontSize: "0.75rem", color: "#666", letterSpacing: "0.08em" }}>13 tracks · 37 minutes · 2026</p>
+
             </div>
 
             <hr style={{ border: "none", borderTop: "0.5px solid rgba(255,255,255,0.12)", margin: "1.5rem 0" }} />
@@ -234,7 +235,10 @@ export default function DownloadPage() {
                 { name: "Jon Laine", role: "Drums" },
                 { name: "Austin Stahle", role: "Guitar" },
                 { name: "Chris Fischer", role: "Keys, Synths" },
-                { name: "Frank Marchand", role: "Mixing engineer" },
+                { name: "Frank Marchand", role: "Mixing and Recording Engineer" },
+                { name: "Jose Bejaraño Arca", role: "Recording Engineer" },
+                { name: "Alan Douches", role: "Mastering Engineer" },
+
               ].map(({ name, role }) => (
                 <div key={name} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", padding: "7px 0", borderBottom: "0.5px solid rgba(255,255,255,0.08)" }}>
                   <span style={{ fontSize: "0.85rem", color: "#f0e6d3" }}>{name}</span>
@@ -265,27 +269,77 @@ export default function DownloadPage() {
 
             <hr style={{ border: "none", borderTop: "0.5px solid rgba(255,255,255,0.12)", margin: "1.5rem 0" }} />
 
-            {/* Download button */}
-            <a
-              href="https://pub-958e3a333ce34130ac2d28678cff1d91.r2.dev/severed-the-album.zip"
-              download="Severed-The-Album.zip"
-              style={{
-                display: "block",
-                width: "100%",
-                padding: "1rem",
-                background: "#fff",
-                color: "#000",
-                textAlign: "center",
-                textDecoration: "none",
-                fontSize: "0.75rem",
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                fontWeight: "bold",
-                boxSizing: "border-box",
-              }}
-            >
-              Download Album
-            </a>
+        {/* Download Instructions */}
+<hr style={{ border: "none", borderTop: "0.5px solid rgba(255,255,255,0.12)", margin: "1.5rem 0" }} />
+
+<p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#555", marginBottom: "1.5rem" }}>How to download</p>
+
+<div style={{ marginBottom: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+  {[
+    ["01", "Click Download Album below. A file called Severed-The-Album.zip will save to your device (211 MB — give it a moment)."],
+    ["02", "Open the zip to find 13 tracks and a PDF booklet."],
+    ["03", "The files are numbered 01–13. That's normal. Once you add them to a music app, track names and album art will appear automatically from the embedded metadata."],
+  ].map(([num, text]) => (
+    <div key={num} style={{ display: "flex", gap: "1.25rem", alignItems: "flex-start" }}>
+      <span style={{ fontSize: "0.65rem", letterSpacing: "0.15em", color: "#444", paddingTop: "3px", minWidth: "16px" }}>{num}</span>
+      <p style={{ fontSize: "0.8rem", color: "#888", lineHeight: 1.8, margin: 0, letterSpacing: "0.03em" }}>{text}</p>
+    </div>
+  ))}
+
+  {/* Step 04 with platform sub-lines */}
+  <div style={{ display: "flex", gap: "1.25rem", alignItems: "flex-start" }}>
+    <span style={{ fontSize: "0.65rem", letterSpacing: "0.15em", color: "#444", paddingTop: "3px", minWidth: "16px" }}>04</span>
+    <div style={{ fontSize: "0.8rem", color: "#888", lineHeight: 1.8, letterSpacing: "0.03em" }}>
+      <span style={{ display: "block" }}><strong style={{ color: "#ccc" }}>Mac:</strong> double-click the zip → drag into Apple Music.</span>
+      <span style={{ display: "block" }}><strong style={{ color: "#ccc" }}>Windows:</strong> right-click → Extract All → drag into your library.</span>
+      <span style={{ display: "block" }}><strong style={{ color: "#ccc" }}>iPhone:</strong> open zip in Files app → import into Doppler or similar.</span>
+      <span style={{ display: "block" }}><strong style={{ color: "#ccc" }}>Android:</strong> tap zip in Downloads → Extract → open in any music player.</span>
+    </div>
+  </div>
+</div>
+
+<hr style={{ border: "none", borderTop: "0.5px solid rgba(255,255,255,0.12)", margin: "1.5rem 0" }} />
+
+<a href="/severed-album-package.pdf" download style={{
+    display: "block",
+    width: "100%",
+    padding: "1rem",
+    background: "#fff",
+    color: "#000",
+    textAlign: "center",
+    textDecoration: "none",
+    fontSize: "0.75rem",
+    letterSpacing: "0.2em",
+    textTransform: "uppercase",
+    fontWeight: "bold",
+    boxSizing: "border-box",
+  }}>
+  Download Booklet
+</a>
+
+<br />
+
+{/* Download button */}
+
+  <a href="https://pub-958e3a333ce34130ac2d28678cff1d91.r2.dev/severed-the-album.zip"
+  download="Severed-The-Album.zip"
+  style={{
+    display: "block",
+    width: "100%",
+    padding: "1rem",
+    background: "#fff",
+    color: "#000",
+    textAlign: "center",
+    textDecoration: "none",
+    fontSize: "0.75rem",
+    letterSpacing: "0.2em",
+    textTransform: "uppercase",
+    fontWeight: "bold",
+    boxSizing: "border-box",
+  }}
+>
+  Download Album
+</a>
 
           </div>
         )}
