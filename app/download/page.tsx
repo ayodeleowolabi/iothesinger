@@ -184,8 +184,8 @@ export default function DownloadPage() {
               />
               <p style={{ fontSize: "0.75rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#888", margin: "0 0 4px" }}>Io</p>
               <h1 style={{ fontSize: "1.75rem", fontWeight: "500", letterSpacing: "0.18em", textTransform: "uppercase", margin: "0 0 6px" }}>Severed</h1>
-              <p style={{ fontSize: "0.75rem", color: "#666", letterSpacing: "0.08em" }}>13 tracks · 37 minutes · 2026</p>
-
+              <p style={{ fontSize: "0.75rem", color: "#666", letterSpacing: "0.08em" }}>13 tracks · 37 minutes · 2026 </p>
+              <p style={{ fontSize: "0.60rem", color: "#666", letterSpacing: "0.1em" }}>Press any track to start playing </p>
             </div>
 
             <hr style={{ border: "none", borderTop: "0.5px solid rgba(255,255,255,0.12)", margin: "1.5rem 0" }} />
@@ -273,11 +273,11 @@ export default function DownloadPage() {
 <hr style={{ border: "none", borderTop: "0.5px solid rgba(255,255,255,0.12)", margin: "1.5rem 0" }} />
 
 <p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#555", marginBottom: "1.5rem" }}>How to download</p>
-
+<p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#555", marginBottom: "1.5rem" }}>Please download on your computer and transfer to your preferred music streaming app ie. Spotify, Apple Music, Tidal </p>
 <div style={{ marginBottom: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
   {[
     ["01", "Click Download Album below. A file called Severed-The-Album.zip will save to your device (211 MB — give it a moment)."],
-    ["02", "Open the zip to find 13 tracks and a PDF booklet."],
+    ["02", "Open the zip to find 13 tracks."],
     ["03", "The files are numbered 01–13. That's normal. Once you add them to a music app, track names and album art will appear automatically from the embedded metadata."],
   ].map(([num, text]) => (
     <div key={num} style={{ display: "flex", gap: "1.25rem", alignItems: "flex-start" }}>
@@ -292,10 +292,9 @@ export default function DownloadPage() {
     <div style={{ fontSize: "0.8rem", color: "#888", lineHeight: 1.8, letterSpacing: "0.03em" }}>
       <span style={{ display: "block" }}><strong style={{ color: "#ccc" }}>Mac:</strong> double-click the zip → drag into Apple Music.</span>
       <span style={{ display: "block" }}><strong style={{ color: "#ccc" }}>Windows:</strong> right-click → Extract All → drag into your library.</span>
-      <span style={{ display: "block" }}><strong style={{ color: "#ccc" }}>iPhone:</strong> open zip in Files app → import into Doppler or similar.</span>
-      <span style={{ display: "block" }}><strong style={{ color: "#ccc" }}>Android:</strong> tap zip in Downloads → Extract → open in any music player.</span>
     </div>
   </div>
+  
 </div>
 
 <hr style={{ border: "none", borderTop: "0.5px solid rgba(255,255,255,0.12)", margin: "1.5rem 0" }} />
