@@ -127,9 +127,9 @@ export default function ListenPage() {
           In 2023 I renamed myself IO after Jupiter's moon.<br></br>
 IO is the most volcanically active body in the solar system. Constantly erupting. Constantly rebuilding. Shaped by forces it didn't choose, producing something no other world can.
 That is this album. <br></br>
-Severed is Chapter 1 of a universe I am building out of the ashes of a past I didn't choose. It is not on streaming. It lives here, in the hands of people who actually want it.
-For $10 you receive a private listening page, a full download, a lyric booklet, and a personal artifact from the making of this record because this album cost something real to make, and you should know that when you hold it.
-          </p>
+Severed is Chapter 1 of a universe I am building out of the ashes of a past I didn't choose. It is not on streaming. It lives here, in the hands of people who actually crave hearing a story of severing away to build something new. <br></br>
+For $10 you receive the physical record mailed to you. Inside: a full download link, a lyric booklet, and a personal artifact from the making of this record.
+US only. Limited to what I can mail before I leave the country. When it's gone, it's gone.  </p>
         </div>
 
           <div>
@@ -142,6 +142,7 @@ For $10 you receive a private listening page, a full download, a lyric booklet, 
               lineHeight: "1.9",
               marginBottom: "4px",
               letterSpacing: "0.01em",
+              textAlign: "center",
             }}
           >
             Once you purchase, you will receive a password and website where you
