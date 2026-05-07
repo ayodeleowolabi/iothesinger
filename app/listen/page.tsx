@@ -116,7 +116,7 @@ export default function ListenPage() {
           <p
             style={{
               fontFamily: "var(--font-cormorant)",
-              fontSize: "0.95rem",
+              fontSize: "1.4rem",
               fontWeight: "300",
               color: "rgba(240,230,211,0.75)",
               lineHeight: "1.9",
@@ -136,7 +136,7 @@ US only. Limited to what I can mail before I leave the country. When it's gone, 
           <p
             style={{
               fontFamily: "var(--font-cormorant)",
-              fontSize: "0.875rem",
+              fontSize: "1rem",
               fontWeight: "300",
               color: "rgba(245, 239, 227, 0.45)",
               lineHeight: "1.9",
