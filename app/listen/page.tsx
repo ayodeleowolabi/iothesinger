@@ -147,7 +147,7 @@ export default function ListenPage() {
 
         {/* Purchase button */}
         <a
-          href="https://iothesinger.com/download"
+          href="https://buy.stripe.com/9B67sL5T64766DRdDG0RG02"
           target="_blank"
           rel="noopener noreferrer"
           style={{
