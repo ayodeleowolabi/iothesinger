@@ -83,42 +83,40 @@ function buildEmail() {
       <td align="center">
         <table width="480" cellpadding="0" cellspacing="0" style="max-width:480px;width:100%;">
  
-          <!-- NFC Card Image -->
+          <!-- NFC Card Image — fixed height prevents empty space when blocked -->
           <tr>
-            <td align="center" style="padding-bottom:36px;">
-              <a href="${process.env.ALBUM_URL}" style="display:block;text-align:center;">
-  <img
-    src="https://iothesinger.com/severednfcsize.jpg"
-    alt="severed — Chapter 1"
-    width="320"
-    border="0"
-    style="width:320px;max-width:100%;border-radius:8px;display:block;margin:0 auto;"
-  />
-</a>
+            <td align="center" style="padding-bottom:32px;height:183px;max-height:183px;overflow:hidden;">
+              <img
+                src="https://iothesinger.com/severednfcsize.jpg"
+                alt="severed — Chapter 1 by iothesinger"
+                width="290"
+                height="183"
+                style="width:290px;height:183px;border-radius:8px;display:block;object-fit:cover;"
+              />
             </td>
           </tr>
  
           <!-- Access link -->
           <tr>
             <td align="center" style="padding-bottom:8px;">
-              <p style="margin:0;font-size:9px;letter-spacing:0.25em;color:#7a6a5a;text-transform:uppercase;">Access link</p>
+              <p style="margin:0;font-size:9px;letter-spacing:0.25em;color:#7a6a5a;text-transform:uppercase;font-family:Arial,sans-serif;">Access link</p>
             </td>
           </tr>
           <tr>
             <td align="center" style="padding-bottom:28px;">
-              <a href="${process.env.ALBUM_URL}" style="font-size:14px;color:#c9a882;font-family:Courier New,Courier,monospace;word-break:break-all;">${process.env.ALBUM_URL}</a>
+              <a href="${process.env.ALBUM_URL}" style="font-size:14px;color:#c9a882;font-family:Arial,sans-serif;word-break:break-all;">${process.env.ALBUM_URL}</a>
             </td>
           </tr>
  
           <!-- Password -->
           <tr>
             <td align="center" style="padding-bottom:8px;">
-              <p style="margin:0;font-size:9px;letter-spacing:0.25em;color:#7a6a5a;text-transform:uppercase;">Password</p>
+              <p style="margin:0;font-size:9px;letter-spacing:0.25em;color:#7a6a5a;text-transform:uppercase;font-family:Courier New,monospace;">Password</p>
             </td>
           </tr>
           <tr>
-            <td align="center" style="padding-bottom:20px;">
-              <p style="margin:0;font-size:22px;letter-spacing:0.2em;color:#f0e8dc;font-family:Arial,sans-serif;">${process.env.ALBUM_PASSWORD}</p>
+            <td align="center" style="padding-bottom:10px;">
+              <p style="margin:0;font-size:22px;letter-spacing:0.2em;color:#f0e8dc;font-family:Courier New,monospace;">${process.env.ALBUM_PASSWORD}</p>
             </td>
           </tr>
  
@@ -131,8 +129,8 @@ function buildEmail() {
             </td>
           </tr>
           <tr>
-            <td align="center" style="padding-bottom:40px;">
-              <p style="margin:0;font-size:12px;color:#5a4a3a;line-height:1.8;">
+            <td align="center" style="padding-bottom:10px;">
+              <p style="margin:0;font-size:12px;color:#5a4a3a;line-height:1.8;font-family:Arial,sans-serif;">
                 Keep this email safe — it's the only way back in.<br>
                 Questions? Reply anytime.
               </p>
@@ -154,4 +152,3 @@ function buildEmail() {
 </html>
   `
 }
- 
