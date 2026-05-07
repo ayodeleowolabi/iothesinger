@@ -62,8 +62,8 @@ export default function ListenPage() {
         {/* NFC card image — credit card proportions at display size */}
         <div
           style={{
-            width: "400px",
-            height: "280px",
+            width: "700px",
+            height: "480px",
             position: "relative",
             marginBottom: "28px",
             borderRadius: "8px",
@@ -87,11 +87,11 @@ export default function ListenPage() {
             fontSize: "0.7rem",
             letterSpacing: "0.25em",
             textTransform: "uppercase",
-            marginBottom: "6px",
+            marginBottom: "2px",
             fontFamily: "var(--font-cormorant)",
           }}
         >
-          Chapter 1
+          iothesinger — severed: chapter 1
         </p>
 
     
@@ -99,9 +99,8 @@ export default function ListenPage() {
         {/* Thin divider */}
         <div
           style={{
-            width: "32px",
             borderTop: "0.5px solid rgba(240,230,211,0.2)",
-            marginBottom: "36px",
+            marginBottom: "10px",
           }}
         />
 
@@ -110,38 +109,44 @@ export default function ListenPage() {
           style={{
             width: "100%",
             maxWidth: "600px",
-            marginBottom: "40px",
+            marginBottom: "20px",
             textAlign: "center",
           }}
         >
           <p
             style={{
-              fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+              fontFamily: "var(--font-cormorant)",
               fontSize: "0.95rem",
               fontWeight: "300",
               color: "rgba(240,230,211,0.75)",
               lineHeight: "1.9",
-              marginBottom: "16px",
+              marginBottom: "4px",
               letterSpacing: "0.01em",
             }}
           >
-            Listen to my debut album now. Please note this is not on streaming
-            platforms at this time. Feel free to check out some of the singles
-            off the record if you need to vet me first! lol.
+          In 2023 I renamed myself IO after Jupiter's moon.<br></br>
+IO is the most volcanically active body in the solar system. Constantly erupting. Constantly rebuilding. Shaped by forces it didn't choose, producing something no other world can.
+That is this album. <br></br>
+Severed is Chapter 1 of a universe I am building out of the ashes of a past I didn't choose. It is not on streaming. It lives here, in the hands of people who actually want it.
+For $10 you receive a private listening page, a full download, a lyric booklet, and a personal artifact from the making of this record because this album cost something real to make, and you should know that when you hold it.
           </p>
+        </div>
+
+          <div>
           <p
             style={{
-              fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+              fontFamily: "var(--font-cormorant)",
               fontSize: "0.875rem",
               fontWeight: "300",
-              color: "rgba(240,230,211,0.45)",
+              color: "rgba(245, 239, 227, 0.45)",
               lineHeight: "1.9",
+              marginBottom: "4px",
               letterSpacing: "0.01em",
             }}
           >
             Once you purchase, you will receive a password and website where you
             can access the record. Thanks for your support it means more than
-            you know. 🖤
+            you know. 
           </p>
         </div>
 
@@ -174,7 +179,7 @@ export default function ListenPage() {
             e.currentTarget.style.color = "#FFFFFa";
           }}
         >
-          Purchase the album
+          Purchase - $10
         </a>
 
         {/* Streaming platforms */}
