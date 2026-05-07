@@ -60,10 +60,11 @@ export default function ListenPage() {
         }}
       >
         {/* NFC card image — credit card proportions at display size */}
-        <div
+      <div
           style={{
-            width: "700px",
-            height: "480px",
+            width: "100%",
+            maxWidth: "700px",
+            aspectRatio: "700 / 480",
             position: "relative",
             marginBottom: "28px",
             borderRadius: "8px",
@@ -180,7 +181,7 @@ US only. Limited to what I can mail before I leave the country. When it's gone, 
             e.currentTarget.style.color = "#FFFFFa";
           }}
         >
-          Purchase - $10
+          Get The Record - $10
         </a>
 
         {/* Streaming platforms */}
