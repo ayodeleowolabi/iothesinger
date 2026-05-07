@@ -86,12 +86,15 @@ function buildEmail() {
           <!-- NFC Card Image -->
           <tr>
             <td align="center" style="padding-bottom:36px;">
-              <img
-                src="https://iothesinger.com/severednfcsize.jpg"
-                alt="severed — Chapter 1"
-                width="320"
-                style="width:320px;max-width:100%;border-radius:8px;display:block;"
-              />
+              <a href="${process.env.ALBUM_URL}" style="display:block;text-align:center;">
+  <img
+    src="https://iothesinger.com/severednfcsize.jpg"
+    alt="severed — Chapter 1"
+    width="320"
+    border="0"
+    style="width:320px;max-width:100%;border-radius:8px;display:block;margin:0 auto;"
+  />
+</a>
             </td>
           </tr>
  
@@ -103,7 +106,7 @@ function buildEmail() {
           </tr>
           <tr>
             <td align="center" style="padding-bottom:28px;">
-              <a href="${process.env.ALBUM_URL}" style="font-size:14px;color:#c9a882;font-family:Arial,sans-serif;word-break:break-all;">${process.env.ALBUM_URL}</a>
+              <a href="${process.env.ALBUM_URL}" style="font-size:14px;color:#c9a882;font-family:Courier New,Courier,monospace;word-break:break-all;">${process.env.ALBUM_URL}</a>
             </td>
           </tr>
  
@@ -114,14 +117,9 @@ function buildEmail() {
             </td>
           </tr>
           <tr>
-            <td align="center" style="padding-bottom:40px;">
+            <td align="center" style="padding-bottom:20px;">
               <p style="margin:0;font-size:22px;letter-spacing:0.2em;color:#f0e8dc;font-family:Arial,sans-serif;">${process.env.ALBUM_PASSWORD}</p>
             </td>
-          </tr>
- 
-          <!-- Divider -->
-          <tr>
-            <td style="border-top:0.5px solid #2a1a10;padding-bottom:32px;"></td>
           </tr>
  
           <!-- Thank you -->
