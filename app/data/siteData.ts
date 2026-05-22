@@ -34,10 +34,6 @@ export const pullQuote =
   "iothesinger is a rock and soul artist whose performances don't just move rooms, they change them.";
 
 export const shows = [
-  { date: "Apr 30, 2026", venue: "Songbyrd", city: "Washington, DC", url: "https://dice.fm/partner/tickets/event/l85eal-iothesinger-30th-apr-songbyrd-washington-dc-tickets?dice_id=8743069&dice_channel=web&dice_tags=organic&dice_campaign=Songbyrd+LLC+dba+Songbyrd+Music+House&dice_feature=mio_marketing&_branch_match_id=1487484669882290926&utm_source=web&utm_campaign=Songbyrd+LLC+dba+Songbyrd+Music+House&utm_medium=mio_marketing&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXz8nMy9ZLyUxO1UvL1c9MsjBJNkpNNTcwSbGvK0pNSy0qysxLj08qyi8vTi2ydc4oys9NBQBl6wMiOwAAAA%3D%3D" },
-  { date: "May 2, 2026", venue: "Adams Morgan Porchfest", city: "Washington, DC", url: "https://adamsmorgan.com/porchfest#schedule" },
-  { date: "May 5, 2026", venue: "Keystone Corner", city: "Baltimore, MD", url: "https://www.instantseats.com/?fuseaction=home.artist&VenueID=514&artistid=38979&fbclid=IwY2xjawRBIzxleHRuA2FlbQIxMABicmlkETAwRHl0b284TmxLQWxpWUVlc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHqgj2iNxwgNo9UqtxR5r1hzDoIrOuE-IFkazKnXcv6ONrzBg6GirunOCOG4e_aem_MuXpDamcHRDVZCK0B_ZO6Q" },
-  { date: "May 15, 2026", venue: "Big Bear Cafe", city: "Washington, DC", url: 'https://buy.stripe.com/3cIdR93KY6feger7fi0RG00'},
   { date: "May 28, 2026", venue: "Housing Works Book Store", city: "New York, NY", url: null },
   { date: "Jun 11, 2026", venue: "Allegro Ma Non Troppo", city: "Seville, Spain", url: null },
   { date: "Jul 3, 2026", venue: "Lady Drama Rock Bar", city: "Seville, Spain", url: 'https://buy.stripe.com/bJe14na9m9rqfan7fi0RG01' },
