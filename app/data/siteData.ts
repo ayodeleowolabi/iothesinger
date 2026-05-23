@@ -5,6 +5,92 @@ export const pressPhotos = [
   { file: "/IO4.jpg", label: "Press Photo 4" },
   { file: "/IO5.jpg", label: "Press Photo 5" },
   { file: "/IO6.jpg", label: "Press Photo 6" },
+    { file: "/IOEPK1.jpg", label: "" },
+    { file: "/IOEPK2.png", label: "" },
+     { file: "/IOEPK3.png", label: "" },
+
+];
+
+export const STATS = [
+  { num: "420K+", accent: true, label: "Spotify streams" },
+  { num: "530+", accent: true, label: "Tickets sold · 7 shows" },
+  { num: "3", accent: false, label: "Countries\nUS · Spain · Portugal" },
+  { num: "3", accent: false, label: "Kennedy Center appearances" },
+];
+
+export const PRESS = [
+  {
+    quote: "The album that helped a D.C. artist take back her voice.",
+    source: "Washington City Paper · April 2026",
+    href: "https://washingtoncitypaper.com/article/785035/the-album-that-helped-a-d-c-artist-take-back-her-voice/",
+  },
+  {
+    quote: "The anthem we all need today.",
+    source: 'EARMILK · November 2024, on "Tomorrow"',
+    href: "https://earmilk.com/2024/11/04/iothesingers-tomorrow-is-the-anthem-we-all-need-today/",
+  },
+  
+ {
+  quote: "At minute 2:09, the musical base explodes between raspy guitars and a rhythm that rises like a wave — pure rock empowerment.",
+  source: "Pop Punkers Mexico · October 2024",
+  href: "https://www.poppunkers.com.mx/2024/10/iothesinger-tomorrow.html?m=1",
+},
+];
+
+export const VIDEOS = [
+  {
+    href: "https://www.instagram.com/p/DVZtYNqkcyI/",
+    title: "It's too much",
+    sub: "Watch on Instagram",
+  },
+  {
+    href: "https://www.instagram.com/p/DYXyOAiMPpc/",
+    title: '"Tomorrow"',
+    sub: "Songbyrd · DC · 2026",
+  },
+  {
+    href: "https://www.instagram.com/p/DX2_j5PMQGK/",
+    title: '"I Got a Ticket and covers"',
+    sub: "Adams Morgan Porchfest · DC",
+  },
+];
+
+export const UPCOMING = [
+  { venue: "Housing Works Bookstore Cafe", loc: "SoHo, New York", tag: "Confirmed" },
+  { venue: "Lady Drama Rock Bar", loc: "Sevilla", tag: "Confirmed" },
+  { venue: "Fotomaton Bar", loc: "Madrid", tag: "Confirmed" },
+  { venue: "Café La Palma", loc: "Madrid", tag: "Confirmed" },
+  { venue: "Plaza de España", loc: "Don Benito", tag: "Confirmed" },
+  { venue: "Allegro Ma Non Troppo", loc: "Sevilla", tag: "Return booking" },
+  { venue: "Bar Mutante", loc: "Sevilla", tag: "Return booking" },
+  { venue: "El Palacio del Algaba", loc: "Sevilla", tag: "Return booking" },
+];
+export const CREDITS = [
+  { venue: "Jazz & Blossoms DC", loc: "Opening for Bilal", tag: "2022" },
+  { venue: "Kennedy Center Millennium Stage", loc: "Producer & Performer", tag: "2022–23" },
+  { venue: "Songbyrd Music House DC", loc: "Headline · 70 tickets", tag: "2024" },
+  { venue: "AsseJazz", loc: "Sevilla, Spain · multiple sellouts", tag: "2024–25" },
+  { venue: "Sofar Sounds", loc: "London · New York · DC", tag: "2024–25" },
+  { venue: "In the Park Festival", loc: "Sevilla, Spain", tag: "2024–25" },
+  { venue: "Ubeda Jazz Festival", loc: "Spain · w/ Paquito D'Rivera", tag: "2025" },
+  { venue: "Big Bloom Festival · Strathmore", loc: "Silver Spring, MD · 200+ attendance", tag: "2025" },
+  { venue: "Songbyrd Music House DC", loc: "Album Release Headline · 50 tickets", tag: "2026" },
+  { venue: "The Ned, Washington DC", loc: "Americana & Soul", tag: "Ongoing" },
+];
+
+export const CONFIGS = [
+  {
+    title: "Solo",
+    desc: "Vocals · piano or guitar · loop pedal for live harmonies",
+  },
+  {
+    title: "Duo",
+    desc: "Vocals · duet partner. Two voices, intimate arrangements. Flexible for acoustic stages and smaller venues." 
+  },
+  {
+    title: "Full band",
+    desc: "5-piece. IO performs with a full live band in Europe and the US. Current Spain 2026 touring band based in Europe.",
+  },
 ];
 
 export const pressFeatures = [
@@ -19,7 +105,7 @@ export const pressFeatures = [
 export const facts = [
   { label: "Based in", value: "Washington DC / Seville, Spain" },
   { label: "Education", value: "Howard University" },
-  { label: "Streams", value: "200K+ Spotify" },
+  { label: "Streams", value: "420K+ Spotify" },
   { label: "Press", value: "EARMILK · Washington City Paper · The Washington Post" },
   { label: "Debut Album", value: "Severed — 2026" },
 ];
