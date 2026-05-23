@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { bio, facts, pullQuote, pressPhotos, pressFeatures } from "../data/siteData";
+import { bio, facts, pullQuote, pressPhotos, pressFeatures, pullQuoteAttribution } from "../data/siteData";
 
 export default function ArtistBio() {
   return (
@@ -14,6 +14,12 @@ export default function ArtistBio() {
           margin-bottom: 80px;
         }
         .info-pull-quote { font-size: 1.6rem; }
+        .info-pull-quote-attribution {
+  margin-top: 12px;
+  color: #c45c2e;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+}
         .info-bio-para { font-size: 1.2rem; }
         .press-grid {
           display: grid;
@@ -48,16 +54,19 @@ export default function ArtistBio() {
         <div>
           <p className="info-pull-quote" style={{
             color: "#c45c2e", fontStyle: "italic", lineHeight: 1.5,
-            marginBottom: "48px", borderLeft: "3px solid #c45c2e",
+            marginBottom: "4px", borderLeft: "3px solid #c45c2e",
             paddingLeft: "24px", fontFamily: "var(--font-cormorant)", fontWeight: "300",
           }}>
             "{pullQuote}"
           </p>
+          <div className="info-pull-quote-attribution">
+            — {pullQuoteAttribution}
+          </div>
 
           {bio.map((para, i) => (
             <p key={i} className="info-bio-para" style={{
               color: "rgba(240,230,211,0.85)", lineHeight: 1.9,
-              marginBottom: "24px", fontFamily: "var(--font-cormorant)", fontWeight: "400",
+             marginTop: "24px", marginBottom: "24px", fontFamily: "var(--font-cormorant)", fontWeight: "400",
             }}>
               {para}
             </p>
@@ -115,104 +124,165 @@ export default function ArtistBio() {
       </div>
 
       {/* ── Press Features ── */}
-      {pressFeatures.length > 0 && (
-        <div style={{ borderTop: "1px solid rgba(240,230,211,0.15)", paddingTop: "48px", marginBottom: "80px" }}>
-          <h2 style={{
-            fontFamily: "var(--font-playfair)", color: "#f0e6d3", fontSize: "1.5rem",
-            fontWeight: "900", letterSpacing: "-0.01em", textTransform: "uppercase", marginBottom: "32px",
-          }}>
-            Press
-          </h2>
+      {/* ── Press Features ── */}
+{pressFeatures.length > 0 && (
+  <section
+    style={{
+      borderTop: "1px solid rgba(240,230,211,0.15)",
+      paddingTop: "48px",
+      marginBottom: "80px",
+    }}
+  >
+    <h2
+      style={{
+        fontFamily: "var(--font-playfair)",
+        color: "#f0e6d3",
+        fontSize: "1.5rem",
+        fontWeight: 900,
+        textTransform: "uppercase",
+        marginBottom: "32px",
+      }}
+    >
+      Press
+    </h2>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-            {pressFeatures.map((feature) => (
-              <a
-                key={feature.url}
-                href={feature.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: "none", display: "block" }}
-              >
-                <div
-                  className="press-feature-card"
-                  onMouseEnter={e => {
-                    (e.currentTarget as HTMLDivElement).style.borderColor = "#c45c2e";
-                    (e.currentTarget as HTMLDivElement).style.background = "rgba(196,92,46,0.05)";
-                  }}
-                  onMouseLeave={e => {
-                    (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(240,230,211,0.12)";
-                    (e.currentTarget as HTMLDivElement).style.background = "rgba(240,230,211,0.02)";
-                  }}
-                >
-                  {/* Photo */}
-                  <div className="press-feature-image" style={{ position: "relative", height: "180px", overflow: "hidden" }}>
-                    <Image
-                      src="https://i0.wp.com/newspack-washingtoncitypaper.s3.amazonaws.com/uploads/2026/04/ayo-2_Josh-Jones-scaled-e1777473247686.jpg?w=1822&ssl=1"
-                      alt={feature.headline}
-                      fill
-                      style={{ objectFit: "cover", objectPosition: "center top" }}
-                      unoptimized
-                    />
-                  </div>
+    {pressFeatures.map((feature) => (
+      <a
+        key={feature.url}
+        href={feature.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ textDecoration: "none", display: "block" }}
+      >
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "340px 1fr",
+            alignItems: "center",
+            border: "1px solid rgba(240,230,211,0.15)",
+            background: "rgba(10,8,6,0.45)",
+            maxWidth: "1400px",
+          }}
+        >
+          <div
+            style={{
+              position: "relative",
+              height: "220px",
+              overflow: "hidden",
+              background: "#111",
+            }}
+          >
+            <Image
+              src="https://i0.wp.com/newspack-washingtoncitypaper.s3.amazonaws.com/uploads/2026/04/ayo-2_Josh-Jones-scaled-e1777473247686.jpg?w=1822&ssl=1"
+              alt={feature.headline}
+              fill
+              style={{
+                objectFit: "cover",
+                objectPosition: "center 35%",
+              }}
+              unoptimized
+            />
+          </div>
 
-                  {/* Text */}
-                  <div style={{ padding: "24px 24px 24px 0" }}>
-                    <div style={{
-                      color: "#c45c2e", fontSize: "0.7rem", letterSpacing: "0.15em",
-                      textTransform: "uppercase", marginBottom: "10px",
-                      fontFamily: "var(--font-cormorant)", fontWeight: "600",
-                    }}>
-                      {feature.outlet} · {feature.date}
-                    </div>
-                    <div style={{
-                      color: "#f0e6d3", fontSize: "1.3rem", lineHeight: 1.4,
-                      fontFamily: "var(--font-playfair)", fontWeight: "700",
-                    }}>
-                      {feature.headline}
-                    </div>
-                    <div style={{
-                      marginTop: "16px", color: "#c45c2e", fontSize: "0.75rem",
-                      letterSpacing: "0.12em", textTransform: "uppercase",
-                      fontFamily: "var(--font-cormorant)", fontWeight: "600",
-                    }}>
-                      Read Article →
-                    </div>
-                  </div>
-                </div>
-              </a>
-            ))}
+          <div style={{ padding: "2rem 2.5rem" }}>
+            <div
+              style={{
+                color: "#c45c2e",
+                fontSize: "0.75rem",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                marginBottom: "14px",
+                fontFamily: "var(--font-cormorant)",
+                fontWeight: 600,
+              }}
+            >
+              {feature.outlet} · {feature.date}
+            </div>
+
+            <div
+              style={{
+                color: "#f0e6d3",
+                fontSize: "1.75rem",
+                lineHeight: 1.25,
+                fontFamily: "var(--font-playfair)",
+                fontWeight: 700,
+              }}
+            >
+              {feature.headline}
+            </div>
+
+            <div
+              style={{
+                marginTop: "22px",
+                color: "#c45c2e",
+                fontSize: "0.8rem",
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                fontFamily: "var(--font-cormorant)",
+                fontWeight: 600,
+              }}
+            >
+              Read Article →
+            </div>
           </div>
         </div>
-      )}
+      </a>
+    ))}
+  </section>
+)}
 
-      {/* ── Press Photos ── */}
-      <div style={{ borderTop: "1px solid rgba(240,230,211,0.15)", paddingTop: "48px" }}>
-        <h2 style={{
-          fontFamily: "var(--font-playfair)", color: "#f0e6d3", fontSize: "1.5rem",
-          fontWeight: "900", letterSpacing: "-0.01em", textTransform: "uppercase", marginBottom: "32px",
-        }}>
-          Press Photos
-        </h2>
+{/* ── Press Photos ── */}
+<section
+  style={{
+    borderTop: "1px solid rgba(240,230,211,0.15)",
+    paddingTop: "48px",
+  }}
+>
+  <h2
+    style={{
+      fontFamily: "var(--font-playfair)",
+      color: "#f0e6d3",
+      fontSize: "1.5rem",
+      fontWeight: 900,
+      textTransform: "uppercase",
+      marginBottom: "32px",
+    }}
+  >
+    Press Photos
+  </h2>
 
-        <div className="press-grid">
-          {pressPhotos.map((photo) => (
-            <div key={photo.file}>
-              <div style={{ position: "relative", paddingBottom: "100%", overflow: "hidden", background: "#1a1a1a" }}>
-                <Image src={photo.file} alt={photo.label} fill style={{ objectFit: "cover" }} />
-              </div>
-              <a href={photo.file} download style={{
-                display: "block", marginTop: "8px",
-                border: "1px solid rgba(240,230,211,0.3)", color: "rgba(240,230,211,0.7)",
-                padding: "8px 16px", fontSize: "0.75rem", letterSpacing: "0.12em",
-                textTransform: "uppercase", textDecoration: "none",
-                textAlign: "center", fontFamily: "var(--font-cormorant)",
-              }}>
-                Download
-              </a>
-            </div>
-          ))}
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(3, 1fr)",
+      gap: "1.5rem",
+      maxWidth: "1400px",
+    }}
+  >
+    {pressPhotos.map((photo) => (
+      <div key={photo.file}>
+        <div
+          style={{
+            position: "relative",
+            aspectRatio: "1 / 1",
+            overflow: "hidden",
+            background: "#111",
+          }}
+        >
+          <Image
+            src={photo.file}
+            alt={photo.label}
+            fill
+            style={{
+              objectFit: "cover",
+              objectPosition: "center center",
+            }}
+          />
         </div>
       </div>
-    </>
+    ))}
+  </div>
+</section>
+  </>
   );
 }

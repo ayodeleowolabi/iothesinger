@@ -16,6 +16,7 @@ export const STATS = [
   { num: "530+", accent: true, label: "Tickets sold · 7 shows" },
   { num: "3", accent: false, label: "Countries\nUS · Spain · Portugal" },
   { num: "3", accent: false, label: "Kennedy Center appearances" },
+  { num: "50%", label: "physical conversion rate at album release show" }
 ];
 
 export const PRESS = [
@@ -36,7 +37,11 @@ export const PRESS = [
   href: "https://www.poppunkers.com.mx/2024/10/iothesinger-tomorrow.html?m=1",
 },
 ];
-
+export const MEDIA = [
+  { outlet: "WPFW", loc: "Washington DC", desc: "Radio interview & performance", tag: "2026" },
+  { outlet: "WUSA DMV Soundcheck", loc: "Washington DC", desc: "Television feature", tag: "2025" },
+  { outlet: "Rafa Cremades Radio", loc: "Spain", desc: "Live performance & interview", tag: "2025" },
+];
 export const VIDEOS = [
   {
     href: "https://www.instagram.com/p/DVZtYNqkcyI/",
@@ -56,7 +61,6 @@ export const VIDEOS = [
 ];
 
 export const UPCOMING = [
-  { venue: "Housing Works Bookstore Cafe", loc: "SoHo, New York", tag: "Confirmed" },
   { venue: "Lady Drama Rock Bar", loc: "Sevilla", tag: "Confirmed" },
   { venue: "Fotomaton Bar", loc: "Madrid", tag: "Confirmed" },
   { venue: "Café La Palma", loc: "Madrid", tag: "Confirmed" },
@@ -70,12 +74,16 @@ export const CREDITS = [
   { venue: "Kennedy Center Millennium Stage", loc: "Producer & Performer", tag: "2022–23" },
   { venue: "Songbyrd Music House DC", loc: "Headline · 70 tickets", tag: "2024" },
   { venue: "AsseJazz", loc: "Sevilla, Spain · multiple sellouts", tag: "2024–25" },
-  { venue: "Sofar Sounds", loc: "London · New York · DC", tag: "2024–25" },
+  { venue: "Sofar Sounds", loc: "London · New York", tag: "2024–25" },
+  { venue: "Sofar Sounds DC", loc: "Encore requested — bookers noted it had never happened before", tag: "2022-2026" },
   { venue: "In the Park Festival", loc: "Sevilla, Spain", tag: "2024–25" },
+  { venue: "Government of Andalucía Festival Circuit", loc: "Lucena · Aracena · Arahal · Cajasol · Almeria — multiple sellouts", tag: "2024–25" },
+  { venue: "Silves Jazz Festival", loc: "Silves, Portugal", tag: "2025" },
   { venue: "Ubeda Jazz Festival", loc: "Spain · w/ Paquito D'Rivera", tag: "2025" },
   { venue: "Big Bloom Festival · Strathmore", loc: "Silver Spring, MD · 200+ attendance", tag: "2025" },
   { venue: "Songbyrd Music House DC", loc: "Album Release Headline · 50 tickets", tag: "2026" },
   { venue: "The Ned, Washington DC", loc: "Americana & Soul", tag: "Ongoing" },
+  { venue: "Housing Works Bookstore Cafe", loc: "SoHo, New York", tag: "May 2026" },
 ];
 
 export const CONFIGS = [
@@ -117,7 +125,9 @@ export const bio = [
 ];
 
 export const pullQuote =
-  "iothesinger is a rock and soul artist whose performances don't just move rooms, they change them.";
+  "Severed is more than just music — it's a gateway to liberation.";
+
+export const pullQuoteAttribution = "Washington City Paper — April 2026";
 
 export const shows = [
   { date: "May 28, 2026", venue: "Housing Works Book Store", city: "New York, NY", url: null },
