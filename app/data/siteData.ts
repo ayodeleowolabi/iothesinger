@@ -32,7 +32,7 @@ export const PRESS = [
   },
   
  {
-  quote: "At minute 2:09, the musical base explodes between raspy guitars and a rhythm that rises like a wave — pure rock empowerment.",
+  quote: "At minute 2:09, the musical base explodes between raspy guitars and a rhythm that rises like a wave pure rock empowerment.",
   source: "Pop Punkers Mexico · October 2024",
   href: "https://www.poppunkers.com.mx/2024/10/iothesinger-tomorrow.html?m=1",
 },
