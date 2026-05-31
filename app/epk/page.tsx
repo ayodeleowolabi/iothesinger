@@ -316,7 +316,7 @@ export default function EPKPage() {
               <em style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.05em" }}>Severed</em>: a record about what it costs to leave the life you were handed, the grief of losing a faith that was your whole world, and the terrifying, necessary work of building yourself back from nothing.
             </p>
             <p style={{ marginTop: "0.9rem" }}>
-              Rooted in Carole King, James Taylor, and the folk tradition that makes a room go quiet then Queen, U2, and Green Day for the moment it needs to erupt. Her voice is technically ferocious and always in service of the song. Before this record, IO opened for Grammy winner Paquito D&apos;Rivera at the Ubeda Jazz Festival in Spain, sold 530+ tickets across 7 shows, and has been featured in the Washington City Paper, EARMILK, and the Spanish press.
+              Severed, her debut album is rooted in the era of classic rock, from the folk tradition that makes a room go quiet to the bombastic glam rock that makes it erupt. Her voice is technically ferocious and always in service of the song. Before this record, IO opened for Grammy winner Paquito D&apos;Rivera at the Ubeda Jazz Festival in Spain, sold 530+ tickets across 7 shows, and has been featured in the Washington City Paper, EARMILK, and the Spanish press.
             </p>
           </div>
         </div>
