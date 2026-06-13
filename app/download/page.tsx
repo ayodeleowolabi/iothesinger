@@ -21,13 +21,73 @@ const TRACKS = [
   { num: "13", name: "epilogue",               dur: "1:11", file: "13.mp3" },
 ];
 
+const t = {
+  en: {
+    enterCode: "ENTER ACCESS CODE",
+    rareNote: "This album is not currently streaming. You have something rare.",
+    placeholder: "ACCESS CODE",
+    incorrectCode: "Incorrect code. Check your merch insert.",
+    unlock: "UNLOCK",
+    tracks: "13 tracks · 37 minutes · 2026",
+    pressAny: "Press any track to start playing",
+    tracklist: "Tracklist",
+    productionTeam: "The Production Team",
+    specialThanks: "Special thanks",
+    specialThanksBody: "This album exists because of these people. Their generosity made the music possible and held me together while I made it.",
+    howToDownload: "How to download",
+    howToNote: "Please download on your computer and transfer to your preferred music app ie. Spotify, Apple Music, Tidal",
+    steps: [
+      ["01", "Click Download Album below. A file called Severed-The-Album.zip will save to your device (211 MB — give it a moment)."],
+      ["02", "Open the zip to find 13 tracks."],
+      ["03", "The files are numbered 01–13. That's normal. Once you add them to a music app, track names and album art will appear automatically from the embedded metadata."],
+    ],
+    mac: "Mac:",
+    macInstr: "double-click the zip → drag into Apple Music.",
+    windows: "Windows:",
+    windowsInstr: "right-click → Extract All → drag into your library.",
+    downloadBooklet: "Download Booklet",
+    downloadAlbum: "Download Album",
+    playerArtist: "Io · Severed",
+  },
+  es: {
+    enterCode: "INGRESA TU CÓDIGO DE ACCESO",
+    rareNote: "Este álbum no está disponible en streaming. Tienes algo especial.",
+    placeholder: "CÓDIGO DE ACCESO",
+    incorrectCode: "Código incorrecto. Revisa el inserto de tu mercancía.",
+    unlock: "DESBLOQUEAR",
+    tracks: "13 canciones · 37 minutos · 2026",
+    pressAny: "Presiona cualquier canción para comenzar",
+    tracklist: "Lista de canciones",
+    productionTeam: "El equipo de producción",
+    specialThanks: "Agradecimientos especiales",
+    specialThanksBody: "Este álbum existe gracias a estas personas. Su generosidad hizo posible la música y me sostuvo mientras la creaba.",
+    howToDownload: "Cómo descargar",
+    howToNote: "Por favor descarga en tu computadora y transfiere a tu app de música preferida, ej. Spotify, Apple Music, Tidal",
+    steps: [
+      ["01", "Haz clic en Descargar Álbum abajo. Un archivo llamado Severed-The-Album.zip se guardará en tu dispositivo (211 MB — dale un momento)."],
+      ["02", "Abre el zip para encontrar las 13 canciones."],
+      ["03", "Los archivos están numerados 01–13. Es normal. Una vez que los agregues a una app de música, los nombres de las canciones y la portada aparecerán automáticamente desde los metadatos."],
+    ],
+    mac: "Mac:",
+    macInstr: "doble clic en el zip → arrastra a Apple Music.",
+    windows: "Windows:",
+    windowsInstr: "clic derecho → Extraer todo → arrastra a tu biblioteca.",
+    downloadBooklet: "Descargar Libreto",
+    downloadAlbum: "Descargar Álbum",
+    playerArtist: "Io · Severed",
+  },
+};
+
 export default function DownloadPage() {
   const [input, setInput] = useState("");
   const [unlocked, setUnlocked] = useState(false);
   const [error, setError] = useState(false);
   const [currentTrack, setCurrentTrack] = useState<number | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [lang, setLang] = useState<"en" | "es">("en");
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  const copy = t[lang];
 
   function handleSubmit() {
     if (input.trim().toUpperCase() === ACCESS_CODE) {
@@ -106,6 +166,18 @@ export default function DownloadPage() {
 
   const activeTrack = currentTrack !== null ? TRACKS[currentTrack] : null;
 
+  const toggleStyle = (active: boolean): React.CSSProperties => ({
+    background: "none",
+    border: "none",
+    cursor: "pointer",
+    fontSize: "0.6rem",
+    letterSpacing: "0.2em",
+    textTransform: "uppercase",
+    color: active ? "#f0e6d3" : "#444",
+    padding: "0 4px",
+    fontFamily: "sans-serif",
+  });
+
   return (
     <>
       <main style={{
@@ -122,23 +194,22 @@ export default function DownloadPage() {
         textAlign: "center",
       }}>
 
-        {/* Hidden audio element */}
         <audio ref={audioRef} onEnded={handleTrackEnd} />
 
         {!unlocked ? (
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem", width: "100%", maxWidth: "320px" }}>
             <h1 style={{ fontSize: "1.5rem", letterSpacing: "0.1em", marginBottom: "0.5rem" }}>
-              ENTER ACCESS CODE
+              {copy.enterCode}
             </h1>
             <p style={{ color: "#888", fontSize: "0.85rem" }}>
-              This album is not currently streaming. You have something rare.
+              {copy.rareNote}
             </p>
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
-              placeholder="ACCESS CODE"
+              placeholder={copy.placeholder}
               style={{
                 background: "transparent",
                 border: "1px solid #444",
@@ -153,7 +224,7 @@ export default function DownloadPage() {
             />
             {error && (
               <p style={{ color: "#ff4444", fontSize: "0.8rem" }}>
-                Incorrect code. Check your merch insert.
+                {copy.incorrectCode}
               </p>
             )}
             <button
@@ -169,8 +240,15 @@ export default function DownloadPage() {
                 fontWeight: "bold",
               }}
             >
-              UNLOCK
+              {copy.unlock}
             </button>
+
+            {/* Language toggle on lock screen */}
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "4px", marginTop: "0.5rem" }}>
+              <button style={toggleStyle(lang === "en")} onClick={() => setLang("en")}>EN</button>
+              <span style={{ color: "#333", fontSize: "0.6rem" }}>|</span>
+              <button style={toggleStyle(lang === "es")} onClick={() => setLang("es")}>ES</button>
+            </div>
           </div>
         ) : (
           <div style={{ padding: "2rem 1rem 3rem", maxWidth: "560px", width: "100%", textAlign: "left" }}>
@@ -184,14 +262,21 @@ export default function DownloadPage() {
               />
               <p style={{ fontSize: "0.75rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#888", margin: "0 0 4px" }}>Io</p>
               <h1 style={{ fontSize: "1.75rem", fontWeight: "500", letterSpacing: "0.18em", textTransform: "uppercase", margin: "0 0 6px" }}>Severed</h1>
-              <p style={{ fontSize: "0.75rem", color: "#666", letterSpacing: "0.08em" }}>13 tracks · 37 minutes · 2026 </p>
-              <p style={{ fontSize: "0.60rem", color: "#666", letterSpacing: "0.1em" }}>Press any track to start playing </p>
+              <p style={{ fontSize: "0.75rem", color: "#666", letterSpacing: "0.08em" }}>{copy.tracks}</p>
+              <p style={{ fontSize: "0.60rem", color: "#666", letterSpacing: "0.1em" }}>{copy.pressAny}</p>
+
+              {/* Language toggle */}
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "4px", marginTop: "0.75rem" }}>
+                <button style={toggleStyle(lang === "en")} onClick={() => setLang("en")}>EN</button>
+                <span style={{ color: "#333", fontSize: "0.6rem" }}>|</span>
+                <button style={toggleStyle(lang === "es")} onClick={() => setLang("es")}>ES</button>
+              </div>
             </div>
 
             <hr style={{ border: "none", borderTop: "0.5px solid rgba(255,255,255,0.12)", margin: "1.5rem 0" }} />
 
             {/* Tracklist */}
-            <p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#555", marginBottom: "1rem" }}>Tracklist</p>
+            <p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#555", marginBottom: "1rem" }}>{copy.tracklist}</p>
             <ul style={{ listStyle: "none", padding: 0, margin: "0 0 2rem" }}>
               {TRACKS.map((track, index) => {
                 const isActive = currentTrack === index;
@@ -228,21 +313,24 @@ export default function DownloadPage() {
             <hr style={{ border: "none", borderTop: "0.5px solid rgba(255,255,255,0.12)", margin: "1.5rem 0" }} />
 
             {/* The Production Team */}
-            <p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#555", marginBottom: "1rem" }}>The Production Team</p>
+            <p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#555", marginBottom: "1rem" }}>{copy.productionTeam}</p>
             <div style={{ marginBottom: "2rem" }}>
               {[
-                { name: "Jean-Francis Varre", role: "Vocals, Bass" },
-                { name: "Jon Laine", role: "Drums" },
-                { name: "Austin Stahle", role: "Guitar" },
-                { name: "Chris Fischer", role: "Keys, Synths" },
-                { name: "Frank Marchand", role: "Mixing and Recording Engineer" },
-                { name: "Jose Bejaraño Arca", role: "Recording Engineer" },
-                { name: "Alan Douches", role: "Mastering Engineer" },
-
-              ].map(({ name, role }) => (
-                <div key={name} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", padding: "7px 0", borderBottom: "0.5px solid rgba(255,255,255,0.08)" }}>
+                { name: "Ayodele Owolabi (IO)", roles: ["Songwriting", "Vocal Production", "Executive Producer"] },
+                { name: "Jean-Francis Varre", roles: ["Vocals", "Bass"] },
+                { name: "Jon Laine", roles: ["Drums"] },
+                { name: "Austin Stahle", roles: ["Guitar"] },
+                { name: "Chris Fischer", roles: ["Keys", "Synths"] },
+                { name: "Cathy Fink & Marcy Marxer", roles: ["Strings"] },
+                { name: "Frank Marchand", roles: ["Mixing and Recording Engineer"] },
+                { name: "Jose Bejaraño Arca", roles: ["Recording Engineer"] },
+                { name: "Alan Douches", roles: ["Mastering Engineer"] },
+                { name: "Tina Carzon", roles: ["Album Photography"] },
+                { name: "Athina", roles: ["Album Design"] },
+              ].map(({ name, roles }) => (
+                <div key={name} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", padding: "7px 0", borderBottom: "1px solid #222" }}>
                   <span style={{ fontSize: "0.85rem", color: "#f0e6d3" }}>{name}</span>
-                  {role && <span style={{ fontSize: "0.75rem", color: "#555", letterSpacing: "0.05em" }}>{role}</span>}
+                  {roles && <span style={{ fontSize: "0.75rem", color: "#555", letterSpacing: "0.05em" }}>{roles.join(", ")}</span>}
                 </div>
               ))}
             </div>
@@ -250,9 +338,9 @@ export default function DownloadPage() {
             <hr style={{ border: "none", borderTop: "0.5px solid rgba(255,255,255,0.12)", margin: "1.5rem 0" }} />
 
             {/* Special Thanks */}
-            <p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#555", marginBottom: "1rem" }}>Special thanks</p>
+            <p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#555", marginBottom: "1rem" }}>{copy.specialThanks}</p>
             <p style={{ fontSize: "0.85rem", color: "#aaa", lineHeight: 1.7, marginBottom: "1.25rem" }}>
-              This album exists because of these people. Their generosity made the music possible and held me together while I made it.
+              {copy.specialThanksBody}
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "6px 10px", marginBottom: "2rem" }}>
               {[
@@ -269,82 +357,74 @@ export default function DownloadPage() {
 
             <hr style={{ border: "none", borderTop: "0.5px solid rgba(255,255,255,0.12)", margin: "1.5rem 0" }} />
 
-        {/* Download Instructions */}
-<hr style={{ border: "none", borderTop: "0.5px solid rgba(255,255,255,0.12)", margin: "1.5rem 0" }} />
+            {/* Download Instructions */}
+            <p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#555", marginBottom: "1.5rem" }}>{copy.howToDownload}</p>
+            <p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#555", marginBottom: "1.5rem" }}>{copy.howToNote}</p>
+            <div style={{ marginBottom: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+              {copy.steps.map(([num, text]) => (
+                <div key={num} style={{ display: "flex", gap: "1.25rem", alignItems: "flex-start" }}>
+                  <span style={{ fontSize: "0.65rem", letterSpacing: "0.15em", color: "#444", paddingTop: "3px", minWidth: "16px" }}>{num}</span>
+                  <p style={{ fontSize: "0.8rem", color: "#888", lineHeight: 1.8, margin: 0, letterSpacing: "0.03em" }}>{text}</p>
+                </div>
+              ))}
 
-<p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#555", marginBottom: "1.5rem" }}>How to download</p>
-<p style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#555", marginBottom: "1.5rem" }}>Please download on your computer and transfer to your preferred music streaming app ie. Spotify, Apple Music, Tidal </p>
-<div style={{ marginBottom: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
-  {[
-    ["01", "Click Download Album below. A file called Severed-The-Album.zip will save to your device (211 MB — give it a moment)."],
-    ["02", "Open the zip to find 13 tracks."],
-    ["03", "The files are numbered 01–13. That's normal. Once you add them to a music app, track names and album art will appear automatically from the embedded metadata."],
-  ].map(([num, text]) => (
-    <div key={num} style={{ display: "flex", gap: "1.25rem", alignItems: "flex-start" }}>
-      <span style={{ fontSize: "0.65rem", letterSpacing: "0.15em", color: "#444", paddingTop: "3px", minWidth: "16px" }}>{num}</span>
-      <p style={{ fontSize: "0.8rem", color: "#888", lineHeight: 1.8, margin: 0, letterSpacing: "0.03em" }}>{text}</p>
-    </div>
-  ))}
+              {/* Step 04 */}
+              <div style={{ display: "flex", gap: "1.25rem", alignItems: "flex-start" }}>
+                <span style={{ fontSize: "0.65rem", letterSpacing: "0.15em", color: "#444", paddingTop: "3px", minWidth: "16px" }}>04</span>
+                <div style={{ fontSize: "0.8rem", color: "#888", lineHeight: 1.8, letterSpacing: "0.03em" }}>
+                  <span style={{ display: "block" }}><strong style={{ color: "#ccc" }}>{copy.mac}</strong> {copy.macInstr}</span>
+                  <span style={{ display: "block" }}><strong style={{ color: "#ccc" }}>{copy.windows}</strong> {copy.windowsInstr}</span>
+                </div>
+              </div>
+            </div>
 
-  {/* Step 04 with platform sub-lines */}
-  <div style={{ display: "flex", gap: "1.25rem", alignItems: "flex-start" }}>
-    <span style={{ fontSize: "0.65rem", letterSpacing: "0.15em", color: "#444", paddingTop: "3px", minWidth: "16px" }}>04</span>
-    <div style={{ fontSize: "0.8rem", color: "#888", lineHeight: 1.8, letterSpacing: "0.03em" }}>
-      <span style={{ display: "block" }}><strong style={{ color: "#ccc" }}>Mac:</strong> double-click the zip → drag into Apple Music.</span>
-      <span style={{ display: "block" }}><strong style={{ color: "#ccc" }}>Windows:</strong> right-click → Extract All → drag into your library.</span>
-    </div>
-  </div>
-  
-</div>
+            <hr style={{ border: "none", borderTop: "0.5px solid rgba(255,255,255,0.12)", margin: "1.5rem 0" }} />
 
-<hr style={{ border: "none", borderTop: "0.5px solid rgba(255,255,255,0.12)", margin: "1.5rem 0" }} />
+           <a href={lang === "es" ? "/severed-album-package español.pdf" : "/severed-album-package.pdf"} download style={{
+              display: "block",
+              width: "100%",
+              padding: "1rem",
+              background: "#fff",
+              color: "#000",
+              textAlign: "center",
+              textDecoration: "none",
+              fontSize: "0.75rem",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              fontWeight: "bold",
+              boxSizing: "border-box",
+            }}>
+              {copy.downloadBooklet}
+            </a>
 
-<a href="/severed-album-package.pdf" download style={{
-    display: "block",
-    width: "100%",
-    padding: "1rem",
-    background: "#fff",
-    color: "#000",
-    textAlign: "center",
-    textDecoration: "none",
-    fontSize: "0.75rem",
-    letterSpacing: "0.2em",
-    textTransform: "uppercase",
-    fontWeight: "bold",
-    boxSizing: "border-box",
-  }}>
-  Download Booklet
-</a>
+            <br />
 
-<br />
-
-{/* Download button */}
-
-  <a href="https://pub-958e3a333ce34130ac2d28678cff1d91.r2.dev/severed-the-album.zip"
-  download="Severed-The-Album.zip"
-  style={{
-    display: "block",
-    width: "100%",
-    padding: "1rem",
-    background: "#fff",
-    color: "#000",
-    textAlign: "center",
-    textDecoration: "none",
-    fontSize: "0.75rem",
-    letterSpacing: "0.2em",
-    textTransform: "uppercase",
-    fontWeight: "bold",
-    boxSizing: "border-box",
-  }}
->
-  Download Album
-</a>
+            <a
+              href="https://pub-958e3a333ce34130ac2d28678cff1d91.r2.dev/severed-the-album.zip"
+              download="Severed-The-Album.zip"
+              style={{
+                display: "block",
+                width: "100%",
+                padding: "1rem",
+                background: "#fff",
+                color: "#000",
+                textAlign: "center",
+                textDecoration: "none",
+                fontSize: "0.75rem",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                fontWeight: "bold",
+                boxSizing: "border-box",
+              }}
+            >
+              {copy.downloadAlbum}
+            </a>
 
           </div>
         )}
       </main>
 
-      {/* Sticky player bar — only shows when a track is active */}
+      {/* Sticky player bar */}
       {activeTrack && (
         <div style={{
           position: "fixed",
@@ -359,24 +439,19 @@ export default function DownloadPage() {
           gap: "12px",
           zIndex: 100,
         }}>
-          {/* Album art */}
           <img
             src="/SEVERED.JPG"
             alt="Severed"
             style={{ width: "38px", height: "38px", objectFit: "cover", borderRadius: "2px", flexShrink: 0 }}
           />
-
-          {/* Track info */}
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ fontSize: "0.85rem", color: "#fff", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
               {activeTrack.name}
             </div>
             <div style={{ fontSize: "0.65rem", color: "#666", letterSpacing: "0.05em" }}>
-              Io · Severed
+              {copy.playerArtist}
             </div>
           </div>
-
-          {/* Controls */}
           <div style={{ display: "flex", alignItems: "center", gap: "18px", flexShrink: 0 }}>
             <button
               onClick={handlePrev}
