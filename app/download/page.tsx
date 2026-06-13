@@ -245,8 +245,9 @@ export default function DownloadPage() {
 
             {/* Language toggle on lock screen */}
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "4px", marginTop: "0.5rem" }}>
+              <p style={{ color: "#ffffff", fontSize: "0.6rem" }}>languages</p>
               <button style={toggleStyle(lang === "en")} onClick={() => setLang("en")}>EN</button>
-              <span style={{ color: "#333", fontSize: "0.6rem" }}>|</span>
+              <span style={{ color: "#ffffff", fontSize: "0.6rem" }}>|</span>
               <button style={toggleStyle(lang === "es")} onClick={() => setLang("es")}>ES</button>
             </div>
           </div>
