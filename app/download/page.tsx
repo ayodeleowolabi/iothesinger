@@ -327,7 +327,7 @@ export default function DownloadPage() {
                 { name: "Jose Bejaraño Arca", roles: ["Recording Engineer"] },
                 { name: "Alan Douches", roles: ["Mastering Engineer"] },
                 { name: "Tina Carzon", roles: ["Album Photography"] },
-                { name: "Athina", roles: ["Album Design"] },
+                { name: "Athena Efthimiopoulou", roles: ["Album Design"] },
               ].map(({ name, roles }) => (
                 <div key={name} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", padding: "7px 0", borderBottom: "1px solid #222" }}>
                   <span style={{ fontSize: "0.85rem", color: "#f0e6d3" }}>{name}</span>
