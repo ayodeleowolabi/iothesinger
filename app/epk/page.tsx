@@ -261,7 +261,7 @@ export default function EPKPage() {
             {[
               { title: "\u201cI Got a Ticket & Covers\u201d", location: "Adams Morgan Porchfest · Washington DC · 2026", src: "https://customer-bhx35sxtf94ncmdm.cloudflarestream.com/154c01d9c35239191ac227878658f584/iframe?poster=https%3A%2F%2Fcustomer-bhx35sxtf94ncmdm.cloudflarestream.com%2F154c01d9c35239191ac227878658f584%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" },
               { title: "\u201cTomorrow\u201d", location: "Songbyrd DC · 2026", src: "https://customer-bhx35sxtf94ncmdm.cloudflarestream.com/718213477ee3be05bb2069d1ff0f0b46/iframe?poster=https%3A%2F%2Fcustomer-bhx35sxtf94ncmdm.cloudflarestream.com%2F718213477ee3be05bb2069d1ff0f0b46%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" },
-              { title: "Just the Two of Us", location: "Adams Morgan Porchfest · Washington DC · 2026", src: "https://customer-bhx35sxtf94ncmdm.cloudflarestream.com/e3b6bc542e309640daa70ca4c006553a/iframe?poster=https%3A%2F%2Fcustomer-bhx35sxtf94ncmdm.cloudflarestream.com%2Fe3b6bc542e309640daa70ca4c006553a%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" },
+              { title: "Stand", location: "WUSA · Washington DC · 2024", src: "https://www.youtube.com/embed/Y69wyJ209DE?start=166" },
               { title: "\u201cIt\u2019s Too Much\u201d", location: "Washington DC · 2026", src: "https://customer-bhx35sxtf94ncmdm.cloudflarestream.com/6edea4301a0c51cf1b30096456616d59/iframe?poster=https%3A%2F%2Fcustomer-bhx35sxtf94ncmdm.cloudflarestream.com%2F6edea4301a0c51cf1b30096456616d59%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" },
             ].map((video) => (
               <div key={video.title} style={{ border: "0.5px solid var(--epk-rule)", background: "#0c0b09" }}>
@@ -394,10 +394,10 @@ export default function EPKPage() {
         {/* ── SHOWS ── */}
         <div className="epk-section">
           <div className="epk-shows-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
-            <div>
+            {/* <div>
               <SectionLabel>Upcoming — Spain 2026</SectionLabel>
               {UPCOMING.map((s) => <ShowRow key={s.venue} venue={s.venue} loc={s.loc} tag={s.tag} />)}
-            </div>
+            </div> */}
             <div>
               <SectionLabel>Selected credits</SectionLabel>
               {CREDITS.map((s) => <ShowRow key={s.venue + s.tag} venue={s.venue} loc={s.loc} tag={s.tag} />)}
@@ -440,9 +440,8 @@ export default function EPKPage() {
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "center", padding: "2.5rem 2rem" }}>
             <SectionLabel>Booking &amp; press</SectionLabel>
-            <p className="epk-font-serif" style={{ fontSize: "1.8rem", color: "var(--epk-paper)", lineHeight: 1.45, maxWidth: 900, textAlign: "center", margin: 0 }}>
-              Building a European touring presence with an established audience in Spain and Portugal, seeking strategic booking partnerships in the UK, wider Europe, and US
-            </p>
+            <p className="epk-font-sans" style={{ fontSize: "1.3rem", color: "var(--epk-paper)", lineHeight: 1.45, maxWidth: 900, textAlign: "center", margin: 0 }}>
+              Building a touring presence with an established audience base in the US, Spain and Portugal, IO is seeking strategic booking and distribution partnerships with a specific goal of securing opening slots for larger touring acts.</p>
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
               <Link href="mailto:contact@iothesinger.com" className="epk-btn-primary">contact@iothesinger.com</Link>
               <Link href="https://iothesinger.com/info" target="_blank" className="epk-btn-secondary">Download press kit</Link>

@@ -13,10 +13,8 @@ export const pressPhotos = [
 
 export const STATS = [
   { num: "420K+", accent: true, label: "Spotify streams" },
-  { num: "530+", accent: true, label: "Tickets sold · 7 shows" },
-  { num: "3", accent: false, label: "Countries\nUS · Spain · Portugal" },
-  { num: "3", accent: false, label: "Kennedy Center appearances" },
-  { num: "50%", label: "physical conversion rate at album release show" }
+  { num: "600+", accent: true, label: "Tickets sold" },
+  { num: "3", accent: false, label: "Countries\nUS · UK · Spain · Portugal" },
 ];
 
 export const PRESS = [
@@ -61,26 +59,18 @@ export const VIDEOS = [
 ];
 
 export const UPCOMING = [
-  { venue: "Lady Drama Rock Bar", loc: "Sevilla", tag: "Confirmed" },
-  { venue: "Fotomaton Bar", loc: "Madrid", tag: "Confirmed" },
-  { venue: "Café La Palma", loc: "Madrid", tag: "Confirmed" },
-  { venue: "Plaza de España", loc: "Don Benito", tag: "Confirmed" },
-  { venue: "Allegro Ma Non Troppo", loc: "Sevilla", tag: "Return booking" },
-  { venue: "Bar Mutante", loc: "Sevilla", tag: "Return booking" },
-  { venue: "El Palacio del Algaba", loc: "Sevilla", tag: "Return booking" },
+
 ];
 export const CREDITS = [
-  { venue: "Jazz & Blossoms DC", loc: "Opening for Bilal", tag: "2022" },
-  { venue: "Kennedy Center Millennium Stage", loc: "Producer & Performer", tag: "2022–23" },
   { venue: "Songbyrd Music House DC", loc: "Headline · 70 tickets", tag: "2024" },
-  { venue: "AsseJazz", loc: "Sevilla, Spain · multiple sellouts", tag: "2024–25" },
   { venue: "Sofar Sounds", loc: "London · New York", tag: "2024–25" },
   { venue: "Sofar Sounds DC", loc: "Encore requested — bookers noted it had never happened before", tag: "2022-2026" },
-  { venue: "In the Park Festival", loc: "Sevilla, Spain", tag: "2024–25" },
+  { venue: "In the Park Festival", loc: "Sevilla, Spain", tag: "2024 & 25" },
   { venue: "Government of Andalucía Festival Circuit", loc: "Lucena · Aracena · Arahal · Cajasol · Almeria — multiple sellouts", tag: "2024–25" },
-  { venue: "Silves Jazz Festival", loc: "Silves, Portugal", tag: "2025" },
+  { venue: "Silves Festival", loc: "Silves, Portugal", tag: "2025" },
+  { venue: "Bar Mutante Spain", loc: "Headline · 80 tickets", tag: "2025" },
   { venue: "Ubeda Jazz Festival", loc: "Spain · w/ Paquito D'Rivera", tag: "2025" },
-  { venue: "Big Bloom Festival · Strathmore", loc: "Silver Spring, MD · 200+ attendance", tag: "2025" },
+  { venue: "Big Bloom Festival", loc: "Silver Spring, MD · 200+ attendance", tag: "2025" },
   { venue: "Songbyrd Music House DC", loc: "Album Release Headline · 50 tickets", tag: "2026" },
   { venue: "The Ned, Washington DC", loc: "Americana & Soul", tag: "Ongoing" },
   { venue: "Housing Works Bookstore Cafe", loc: "SoHo, New York", tag: "May 2026" },
@@ -97,7 +87,7 @@ export const CONFIGS = [
   },
   {
     title: "Full band",
-    desc: "5-piece. IO performs with a full live band in Europe and the US. Current Spain 2026 touring band based in Europe.",
+    desc: "5-piece. IO performs with a full live band in Europe and the US. The band includes drums, bass, guitar, and keys. IO is the lead vocalist and plays guitar or piano."
   },
 ];
 
