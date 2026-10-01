@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# iothesinger: Official Artist Site
 
-## Getting Started
+**Live site:** [iothesinger.com](https://iothesinger.com)
 
-First, run the development server:
+The official site for **iothesinger**, a soul and rock singer-songwriter working between DC and NYC. Besides the usual artist pages, the site sells the album directly to fans: payment goes through Stripe, and an automated email delivers the download.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Features
+
+- **Pages for Listen, Tour, Video, EPK, Sign-up and Download**, built with the Next.js App Router.
+- **Electronic press kit (`/epk`)** with stats, press quotes, media appearances and downloadable press photos. All of it comes from one typed data file (`app/data/siteData.ts`).
+- **Direct-to-fan album sales**:
+  1. A Stripe Buy Button handles checkout.
+  2. A **Netlify Function webhook** checks the Stripe signature on `checkout.session.completed`.
+  3. The webhook then sends the buyer the download link through the Sender.net transactional email API.
+- **Bilingual download page (EN/ES)** with step-by-step instructions for adding the album to Apple Music, Spotify and other players.
+- **Mailing-list sign-up**, segmented by city.
+- Large audio files stay out of the repo (`public/*.zip` is git-ignored).
+
+## Tech stack
+
+| Layer | Tools |
+|---|---|
+| Framework | Next.js 16 (App Router), React 19 |
+| Language | TypeScript |
+| Styling | Tailwind CSS 4 |
+| Payments | Stripe (Buy Button + webhooks) |
+| Email | Sender.net API |
+| Hosting | Netlify + Netlify Functions |
+| Icons | lucide-react |
+
+## Project structure
+
+```
+app/
+  listen/ tour/ video/ epk/ signup/ download/ info/   routes
+  components/       Navbar, ArtistBio, StripeButton
+  data/siteData.ts  press, stats, media, photos (content lives here)
+netlify/functions/
+  webhook.js        Stripe → email delivery
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Running locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Environment variables (set in Netlify, or `.env` locally, which git ignores):
 
-## Learn More
+```
+STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
+SENDER_API_KEY=
+FROM_EMAIL=
+FROM_NAME=
+YOUR_EMAIL=
+ALBUM_URL=
+ALBUM_PASSWORD=
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+Designed and developed by **Ayodele Owolabi**, [AO Studio](https://github.com/ayodeleowolabi).
