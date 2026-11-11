@@ -74,28 +74,28 @@ export default function TourPage() {
                 {show.city}
               </div>
 
-              {/* Ticket button */}
-              <div className="ticketCell">
-                {show.url ? (
-                  
-                   <a href={show.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ticketLink"
-                  >
-                    Tickets
-                  </a>
-                ) : (
-                  <span style={{
-                    color: "rgba(240,230,211,0.35)",
-                    fontSize: "0.7rem",
-                    letterSpacing: "0.12em",
-                    textTransform: "uppercase",
-                  }}>
-                    TBA
-                  </span>
-                )}
-              </div>
+             {/* Ticket button */}
+<div className="ticketCell">
+  {show.url?.startsWith("http") ? (
+    <a
+      href={show.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="ticketLink"
+    >
+      Tickets
+    </a>
+  ) : (
+    <span style={{
+      color: "rgba(240, 230, 211, 0.65)",
+      fontSize: "0.7rem",
+      letterSpacing: "0.12em",
+      textTransform: "uppercase",
+    }}>
+      {show.url ?? ""}
+    </span>
+  )}
+</div>
 
             </div>
           ))}

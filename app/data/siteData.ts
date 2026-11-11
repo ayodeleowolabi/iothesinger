@@ -63,9 +63,10 @@ export const UPCOMING = [
 ];
 export const CREDITS = [
   { venue: "Songbyrd Music House DC", loc: "Headline · 70 tickets", tag: "2024" },
+  { venue: "Kennedy Center", loc: "Millenium Stage · 200 tickets", tag: "2022, 2023" },
   { venue: "Sofar Sounds", loc: "London · New York", tag: "2024–25" },
   { venue: "Sofar Sounds DC", loc: "Encore requested — bookers noted it had never happened before", tag: "2022-2026" },
-  { venue: "In the Park Festival", loc: "Sevilla, Spain", tag: "2024 & 25" },
+  { venue: "In the Park Festival", loc: "Sevilla, Spain", tag: "2024 & 2025" },
   { venue: "Government of Andalucía Festival Circuit", loc: "Lucena · Aracena · Arahal · Cajasol · Almeria — multiple sellouts", tag: "2024–25" },
   { venue: "Silves Festival", loc: "Silves, Portugal", tag: "2025" },
   { venue: "Bar Mutante Spain", loc: "Headline · 80 tickets", tag: "2025" },
@@ -120,12 +121,20 @@ export const pullQuote =
 export const pullQuoteAttribution = "Washington City Paper — April 2026";
 
 export const shows = [
-  { date: "May 28, 2026", venue: "Housing Works Book Store", city: "New York, NY", url: null },
-  { date: "Jun 11, 2026", venue: "Allegro Ma Non Troppo", city: "Seville, Spain", url: null },
-  { date: "Jul 3, 2026", venue: "Lady Drama Rock Bar", city: "Seville, Spain", url: 'https://buy.stripe.com/bJe14na9m9rqfan7fi0RG01' },
-  { date: "Jul 15, 2026", venue: "Cafe La Palma", city: "Madrid, Spain", url: null },
-  { date: "Jul 24, 2026", venue: "Tina Turner Tribute", city: "Almeria, Spain", url: null },
-  { date: "Aug 22, 2026", venue: "Plaza De España", city: "Extremadura, Spain", url: null },
+   // Winter 2026: DC / VA / MD
+    // Winter 2026: DC / VA / MD
+  { date: "Nov 13, 2026", venue: "DowntownDC Holiday Market (Portrait Gallery)", city: "Washington, DC", url: "free; 3-5PM" }, // 3–5 PM
+  { date: "Nov 20, 2026", venue: "University of the District of Columbia", city: "Washington, DC", url: "private" },
+  { date: "Nov 21, 2026", venue: "The Ned", city: "Washington, DC", url: "private" },
+  { date: "Nov 22, 2026", venue: "DowntownDC Holiday Market (Portrait Gallery)", city: "Washington, DC", url: "free; 3-5PM" }, // 3–5 PM
+  { date: "Dec 3, 2026", venue: "The Ned", city: "Washington, DC", url: "private" },
+  { date: "Dec 7, 2026", venue: "Convention Center", city: "Washington, DC", url: "private" },
+  { date: "Dec 11, 2026", venue: "The Ned", city: "Washington, DC", url: "private" },
+  { date: "Dec 12, 2026", venue: "Candlelight Jazz at MLK Library", city: "Washington, DC", url: "https://feverup.com/m/476778" }, // 6:30 & 8:30 PM sets
+  { date: "Dec 15, 2026", venue: "Creative Cauldron", city: "Falls Church, VA", url: "https://ccva.arts.neonone.com/occurrences/935225/seats" }, // 7:30 PM
+  { date: "Dec 18, 2026", venue: "402 N Howard St", city: "Baltimore, MD", url: "6-8pm" }, // 6 PM · TODO: ticket link
+  { date: "Dec 19, 2026", venue: "DowntownDC Holiday Market (Portrait Gallery)", city: "Washington, DC", url: "free; 3-5PM" }, // 3–5 PM · duo w/ Jean Varre
+  { date: "Dec 20, 2026", venue: "DowntownDC Holiday Market (Portrait Gallery)", city: "Washington, DC", url: "free; 12-2PM" }, // 12–2 PM · solo
 ];
 
 export const videos = [

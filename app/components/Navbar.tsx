@@ -8,6 +8,7 @@ const navLinks = [
   { name: "Info", href: "/info" },
   { name: "Video", href: "/video" },
   { name: "Sign Up", href: "/signup" },
+  { name: "Shows", href: "/tour" },
 ];
 
 function Navbar() {
