@@ -123,18 +123,18 @@ export const pullQuoteAttribution = "Washington City Paper — April 2026";
 export const shows = [
    // Winter 2026: DC / VA / MD
     // Winter 2026: DC / VA / MD
-  { date: "Nov 13, 2026", venue: "DowntownDC Holiday Market (Portrait Gallery)", city: "Washington, DC", url: "free; 3-5PM" }, // 3–5 PM
+  { date: "Nov 13, 2026", venue: "DowntownDC Holiday Market (Portrait Gallery)", city: "Washington, DC", url: "free; 3-5PM full band" }, // 3–5 PM
   { date: "Nov 20, 2026", venue: "University of the District of Columbia", city: "Washington, DC", url: "private" },
   { date: "Nov 21, 2026", venue: "The Ned", city: "Washington, DC", url: "private" },
-  { date: "Nov 22, 2026", venue: "DowntownDC Holiday Market (Portrait Gallery)", city: "Washington, DC", url: "free; 3-5PM" }, // 3–5 PM
+  { date: "Nov 22, 2026", venue: "DowntownDC Holiday Market (Portrait Gallery)", city: "Washington, DC", url: "free; 3-5PM w/ Charles Wilson" }, // 3–5 PM
   { date: "Dec 3, 2026", venue: "The Ned", city: "Washington, DC", url: "private" },
   { date: "Dec 7, 2026", venue: "Convention Center", city: "Washington, DC", url: "private" },
   { date: "Dec 11, 2026", venue: "The Ned", city: "Washington, DC", url: "private" },
   { date: "Dec 12, 2026", venue: "Candlelight Jazz at MLK Library", city: "Washington, DC", url: "https://feverup.com/m/476778" }, // 6:30 & 8:30 PM sets
   { date: "Dec 15, 2026", venue: "Creative Cauldron", city: "Falls Church, VA", url: "https://ccva.arts.neonone.com/occurrences/935225/seats" }, // 7:30 PM
-  { date: "Dec 18, 2026", venue: "402 N Howard St", city: "Baltimore, MD", url: "6-8pm" }, // 6 PM · TODO: ticket link
-  { date: "Dec 19, 2026", venue: "DowntownDC Holiday Market (Portrait Gallery)", city: "Washington, DC", url: "free; 3-5PM" }, // 3–5 PM · duo w/ Jean Varre
-  { date: "Dec 20, 2026", venue: "DowntownDC Holiday Market (Portrait Gallery)", city: "Washington, DC", url: "free; 12-2PM" }, // 12–2 PM · solo
+  { date: "Dec 18, 2026", venue: "402 N Howard St", city: "Baltimore, MD", url: "6-8pm w/Charles Wilson" }, // 6 PM · TODO: ticket link
+  { date: "Dec 19, 2026", venue: "DowntownDC Holiday Market (Portrait Gallery)", city: "Washington, DC", url: "free; 3-5PM duo w/ Jean Varre" }, // 3–5 PM · duo w/ Jean Varre
+  { date: "Dec 20, 2026", venue: "DowntownDC Holiday Market (Portrait Gallery)", city: "Washington, DC", url: "free; 12-2PM solo" }, // 12–2 PM · solo
 ];
 
 export const videos = [
